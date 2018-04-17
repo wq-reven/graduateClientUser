@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>电商直播</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="电商直播" transform="translate(1.000000, 0.000000)">
+            <path d="M0.780178209,8.21263792 C4.8327504,1.41686357 30.7135736,0.833342844 35.1141208,8.21263792 C39.5146681,15.591933 26.5306352,37 17.9471495,37 C9.36366386,37 -3.27239399,15.0084123 0.780178209,8.21263792 Z" id="Triangle" stroke="#FFFFFF"></path>
+            <path d="M4.60680524,7.03088268 C7.75880584,1.74528042 27.888335,1.29143096 31.3109829,7.03088268 C34.7336307,12.7703344 24.6349385,29.4210532 17.9588941,29.4210532 C11.2828497,29.4210532 1.45480465,12.316485 4.60680524,7.03088268 Z" id="Triangle-Copy" stroke="#FFFFFF" transform="translate(18.000000, 16.157895) rotate(-180.000000) translate(-18.000000, -16.157895) "></path>
+            <path d="M8.66915522,9.94943726 C11.0466643,5.96258297 26.2300805,5.62025081 28.8117349,9.94943726 C31.3933893,14.2786237 21.7843992,29.9031016 16.7487543,29.9031016 C11.7131094,29.9031016 6.2916462,13.9362915 8.66915522,9.94943726 Z" id="Triangle-Copy-2" stroke="#FFFFFF" transform="translate(18.668329, 18.366352) scale(-1, 1) rotate(90.000000) translate(-18.668329, -18.366352) "></path>
+            <g id="Oval-2" transform="translate(15.000000, 0.000000)">
+                <g id="path-1-link" transform="translate(1.000000, 1.000000)" fill="#7BC8FF">
+                    <ellipse id="path-1" cx="2" cy="1.89473684" rx="2" ry="1.89473684"></ellipse>
+                </g>
+                <ellipse id="Oval" stroke="#FFFFFF" cx="3" cy="2.89473684" rx="2.5" ry="2.39473684"></ellipse>
+            </g>
+            <g id="Oval-2-Copy-5" transform="translate(29.000000, 22.000000)">
+                <g id="path-2-link" transform="translate(1.000000, 0.000000)" fill="#7BC8FF">
+                    <ellipse id="path-2" cx="2" cy="2.6842105" rx="2" ry="1.89473684"></ellipse>
+                </g>
+                <ellipse id="Oval" stroke="#FFFFFF" cx="3" cy="2.6842105" rx="2.5" ry="2.39473684"></ellipse>
+            </g>
+            <g id="Oval-2-Copy-6" transform="translate(1.000000, 22.000000)">
+                <g id="path-3-link" transform="translate(1.000000, 0.000000)" fill="#7BC8FF">
+                    <ellipse id="path-3" cx="2" cy="2.6842105" rx="2" ry="1.89473684"></ellipse>
+                </g>
+                <ellipse id="Oval" stroke="#FFFFFF" cx="3" cy="2.6842105" rx="2.5" ry="2.39473684"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+                <link rel="stylesheet" href="//p3.ifengimg.com/a/2017/1228/loader.css">
+</head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <div class="load_title">正在加载, 请稍候</div>
+    </div>
+    <!-- nav start  -->
+    <header class="login_header">
+        <div class="container">
+            <div class="login_logo col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                <a href="index.html">
+                    <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/logo-02.png" alt="" class="login-logo-img">海螺服务
+                </a>
+            </div>
+            <div class="return_home col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                <a href="index.html">
+                    <i class="fa fa-home fa-x" aria-hidden="true"></i>返回首页
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="login-content">
+        <div class="vertical">
+            <div class="container">
+                <div class="col-lg-6  col-sm-12 col-md-6 login-content-left">
+                    <div class="login-left-main">
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-sm-12 col-md-6 login-content-right">
+                    <div class="login-right-main">
+                        <div class="content-cen login_mobile" style="display:none">
+                            <div class="content_title">
+                                <span>手机验证码登录</span>
+                                <a class="change_login" id="mailLogin">
+                                    邮箱账号登录
+                                    <i class="fa fa-user-circle"></i>
+                                </a>
+                            </div>
+                            <form id="login_phone">
+                                <div class="content_input">
+                                    <div class="form-group">
+                                        <i class="fa fa-mobile-phone (alias) fa-fw input_icon"></i>
+                                        <input type="text" class="form-control form-alter" id="phoneNumber" placeholder="手机号" name="phoneNumber">
+                                        <span class="check_mob">手机号格式不正确</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fa fa-lock fa-fw input_icon"></i>
+                                        <input type="text" class="form-control login-code form-alter" aria-describedby="" placeholder="验证码" id="phoneCode" name="phoneCode">
+                                        <input type="button" class="btn btn-success btn-get-code" style="margin-left:15px" value="获取验证码" onclick="sendCode(this)"
+                                        />
+                                        <span class="code_error" id="phoneCode_error">验证码不正确,请重新填写!</span>
+                                    </div>
+                                </div>
+                                <div class="login_button">
+                                    <input class="btn btn-primary login-but" id="login_mobile" value="登录" type="submit"></input>
+                                    <p class="content_input_p clearfix">
+                                        <a href="http://console.hlconnect.cn/user/register" target="_blank" class="redister_acc">注册账号</a>
+                                        <a href="http://console.hlconnect.cn/user/findPassword/telphone" target="_blank" class="forget_code">忘记密码？</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="content-cen login_mail">
+                            <div class="content_title">
+                                <span>邮箱账号登录</span>
+                                <a class="change_login" id="phoneLogin">
+                                    手机验证码登录
+                                    <i class="fa fa-mobile-phone (alias) fa-x"></i>
+                                </a>
+                            </div>
+                            <form id="login_form">
+                                <div class="content_input">
+                                    <div class="form-group">
+                                        <i class="fa fa-envelope-o fa-fw input_icon"></i>
+                                        <input type="text" class="form-control form-alter" placeholder="邮箱" name="email" id="email">
+                                        <span class="check_mob">邮箱格式不正确</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fa fa-key fa-fw input_icon"></i>
+                                        <input type="password" class="form-control form-alter" placeholder="密码" name="password" id="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fa fa-lock fa-fw input_icon"></i>
+                                        <input type="text" class="form-control form-alter" placeholder="验证码" name="img_code" id="img_code">
+                                        <span class="code_error" id="code_error">验证码不正确,请重新填写!</span>
+                                    </div>
+                                    <div class="idengtify_img">
+                                        <img src="" alt="" class="idenfity_code" id="idenfity_code">
+                                        <a id="changeCode" class="changeCode" href="javascript:void(0)">看不清,换一张</a>
+                                    </div>
+                                </div>
+                                <div class="login_button_mob">
+                                    <input class="btn btn-primary login-but" id="login_mail" type="submit" value="登录"></input>
+                                    <p class="content_input_p1 clearfix">
+                                        <a href="http://console.hlconnect.cn/user/register" target="_blank" class="redister_acc">注册账号</a>
+                                        <a href="http://console.hlconnect.cn/user/findPassword/telphone" target="_blank" class="forget_code">忘记密码？</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//p0.ifengimg.com/a/2017/1222/jquery-3.2.1.min.js"></script>
+    <script src="//p0.ifengimg.com/a/2017/1222/bootstrap-3.37.min.js"></script>
+    <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <script>
+        function addFixed(params) {
+            var t, n, i, o;
+            return t = {
+                fxdClass: "fxd",
+                elem: "elem",
+                prevPosition: "relative"
+            },
+                params = params || t,
+                n = params.fxdClass,
+                o = params.prevPosition,
+                i = params.elem,
+                i.height(),
+                $(window).scrollTop() > 0 ? i.css({
+                    position: "fixed"
+                }).addClass(n) : i.css({
+                    position: o
+                }).removeClass(n),
+                $(window).scroll(function () {
+                    var e;
+                    if (!($(window).width() < 768))
+                        return e = $(window).scrollTop(),
+                            e > 0 ? i.css({
+                                position: "fixed"
+                            }).addClass(n) : i.css({
+                                position: o
+                            }).removeClass(n)
+                })
+        };
+        $(document).ready(function () {
+            addFixed({
+                elem: $("#navbar"),
+                fxdClass: "nav-bg",
+                prevPosition: "fixed"
+            });
+            $('body').addClass('loaded');
+            $('#loader-wrapper .load_title').remove();
+        });
+        //登录
+        $(function () {
+            $('#login_mobile').click(function () {
+                $.ajax({
+                    type: 'post',
+                    url: 'http://api.hlconnect.cn:8080/consoleapi/login/login',
+                    data: JSON.stringify({
+                        loginName: $('#phoneNumber').val(),
+                        code: $('#phoneCode').val(),
+                        loginType: 1,
+                    }),
+                    contentType: 'application/json; charset=utf-8',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+                    },
+                    success: function (res) {
+                        if (res.code === 420) {
+                            $('#phoneCode_error').show();
+                        } else if (res.code === 200) {
+                            setCookie('hlplayer', JSON.stringify(res.data), 1);
+                            location.assign('index.html');
+                        }
+                    },
+                });
+            });
+            $('#login_mail').click(function () {
+                $.ajax({
+                    type: 'post',
+                    url: 'http://api.hlconnect.cn:8080/consoleapi/login/login',
+                    data: JSON.stringify({
+                        loginName: $('#email').val(),
+                        code: $('#img_code').val(),
+                        loginType: 0,
+                        password: $('#password').val(),
+                    }),
+                    contentType: 'application/json; charset=utf-8',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+                    },
+                    success: function (res) {
+                        if (res.code === 420) {
+                            $('#code_error').show();
+                        } else if (res.code === 200) {
+                            setCookie('hlplayer', JSON.stringify(res.data), 1);
+                            location.assign('index.html');
+                        }
+                    },
+                });
+            });
+            $('#email').blur(function () {
+                changeIdenfityCode();
+            });
+            $('#changeCode').click(function () {
+                changeIdenfityCode();
+            });
+            $('#idenfity_code').click(function () {
+                changeIdenfityCode();
+            });
+            $('#phoneLogin').click(function () {
+                $('.login_mail').hide();
+                $('.login_mobile').show();
+            });
+
+            $('#mailLogin').click(function () {
+                $('.login_mobile').hide();
+                $('.login_mail').show();
+            });
+            $('#img_code').focus(function () {
+                $('#code_error').hide();
+            })
+        });
+
+        var clock = '';
+        var nums = 60;
+        var btn;
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            var domain = '.hlconnect.cn';
+            document.cookie = cname + "=" + cvalue + ";" + expires + '; path=/; domain=' + domain;
+        }
+
+        function changeIdenfityCode() {
+            var email = $('#email').val();
+            if (email == '') {
+                return false;
+            } else if (checkEmail(email) == false) {
+                $('.check_mob').show();
+            } else {
+                $('.check_mob').hide();
+                $('#idenfity_code').attr(
+                    'src',
+                    'http://api.hlconnect.cn:8080/consoleapi/login/validateCode?email=' + email + '&t=' + Date.parse(new Date()),
+                );
+            }
+        }
+
+        function sendCode(thisBtn) {
+            if (checkMobile() == false) {
+                $('.check_mob').show();
+                return false;
+            } else $('.check_mob').hide();
+            btn = thisBtn;
+            btn.disabled = true; //将按钮置为不可点击
+            btn.value = nums + '秒后可重新获取';
+            clock = setInterval(doLoop, 1000); //一秒执行一次
+            var phoneNum = $('#phoneNumber').val();
+            getIdentifyCode(phoneNum); //获取验证码
+        }
+
+        function doLoop() {
+            nums--;
+            if (nums > 0) {
+                btn.value = nums + '秒后可重新获取';
+            } else {
+                clearInterval(clock); //清除js定时器
+                btn.disabled = false;
+                btn.value = '点击发送验证码';
+                nums = 60; //重置时间
+            }
+        }
+        // 获取手机验证码
+        function getIdentifyCode(phone) {
+            $.ajax({
+                type: 'get',
+                url: 'http://api.hlconnect.cn:8080/consoleapi/help/sendMessage?phone=' + phone,
+                success: function (res) {
+                    if(res.code === 200 ) {
+                        console.log('获取验证码成功');
+                    }
+                },
+            });
+        }
+
+        // 手机号格式验证
+        function checkMobile() {
+            var sMobile = $('#phoneNumber').val();
+            if (!/^1[34578]\d{9}$/.test(sMobile)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function checkEmail(email) {
+            var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+            if (myReg.test(email)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        $().ready(function () {
+            $('#login_form').validate({
+                debug: true,
+                rules: {
+                    email: {
+                        required: true,
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6,
+                    },
+                    img_code: {
+                        required: true,
+                    },
+                    phoneNumber: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    email: {
+                        required: '请输入邮箱',
+                    },
+                    password: {
+                        required: '请输入密码',
+                        minlength: '长度至少为6位',
+                    },
+                    img_code: {
+                        required: '请输入验证码',
+                    },
+                    phoneNumber: {
+                        required: '请输入手机号',
+                    }
+                },
+            });
+            $('#login_phone').validate({
+                debug: true,
+                rules: {
+                    phoneNumber: {
+                        required: true,
+                    },
+                    phoneCode: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    phoneNumber: {
+                        required: '请输入手机号',
+                    },
+                    phoneCode: {
+                        required: '请输入手机验证码'
+                    }
+                }
+            })
+        });
+
+    </script>
+    <!-- footer end -->
+    <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+        <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+            <% } %>
+                <% for (key in htmlWebpackPlugin.files.chunks) { %>
+
+                    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                    <% } %>
+</body>
+
+</html>

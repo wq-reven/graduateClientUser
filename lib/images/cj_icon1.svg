@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>视频点播</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视频点播">
+            <rect id="Rectangle-15" stroke="#FFFFFF" x="18.5" y="0.5" width="17" height="17"></rect>
+            <rect id="Rectangle-15-Copy" stroke="#FFFFFF" x="0.5" y="18.5" width="17" height="17"></rect>
+            <rect id="Rectangle-16" stroke="#FFFFFF" x="0.5" y="0.5" width="13" height="13"></rect>
+            <rect id="Rectangle-16-Copy" stroke="#FFFFFF" x="22.5" y="22.5" width="13" height="13"></rect>
+            <g id="Rectangle-14" transform="translate(6.000000, 6.000000)">
+                <g id="path-1-link">
+                    <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+                </g>
+                <rect id="Rectangle-path" stroke="#FFFFFF" x="0.5" y="0.5" width="23" height="23"></rect>
+            </g>
+            <g id="Rectangle-17" transform="translate(16.869364, 17.343214) scale(-1, 1) rotate(46.000000) translate(-16.869364, -17.343214) translate(9.369364, 9.843214)">
+                <g id="path-2-link" fill="#7BC8FF">
+                    <path d="M4.9182307,0.9059673 C7.8357273,0.9059673 14.8791873,8.8819348 14.8791873,10.8669239 C14.8791873,12.8519129 4.437808,16.5284296 1.9008704,13.9914919 C-0.63606727,11.4545543 2.0007341,0.9059673 4.9182307,0.9059673 Z" id="path-2"></path>
+                </g>
+                <path d="M4.9182307,1.4059673 C2.4452372,1.4059673 0.04699294,11.4305077 2.2544238,13.6379385 C3.2278774,14.6113921 6.0090978,14.5719696 9.201941,13.6447673 C10.6225098,13.2322338 11.9726145,12.6815129 12.9593189,12.1155873 C13.8756888,11.5900022 14.3791873,11.095027 14.3791873,10.8669239 C14.3791873,8.8791589 7.2945131,1.4059673 4.9182307,1.4059673 Z" id="Shape" stroke="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

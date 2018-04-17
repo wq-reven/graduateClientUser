@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+
+        <!-- banner start -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="intro">
+                            <h2 class="title">
+                                海螺播放器
+                            </h2>
+                        </div>
+                        <p class="text-left introduce">
+                            海螺播放器提供优质的流媒体播放体验和数据监测服务。
+                        </p>
+                        <ul class="sdklink clearfix">
+                            <li>
+                                <a href="http://develop.hlconnect.cn/androidPlayerDemo.html">播放器 SDK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+        <!-- spread start -->
+        <div class="accurate_spread pb40 pt40">
+            <div class="container">
+                <h4 class="advantage">产品优势</h4>
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>优势</th>
+                        <th>海螺加速</th>
+                    </tr>
+                    <tr>
+                        <td>人性化设计</td>
+                        <td>界面美观大方，操作简洁；
+                            <br> 信息全面，播放状态清晰明确。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>个性化</td>
+                        <td>可以对播放器进行个性化高级配置，打造专属播放器。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>多用途播放器</td>
+                        <td>支持直播格式和各种流媒体视频、音频点播
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>优质体验</td>
+                        <td>低延迟，使用预加载和缓存技术实现画面秒开；
+                            <br> 依托海螺加速服务，流畅度提升幅度>3%，可用性提升幅度>2%;
+                            <br> 首播时间、播放成功率优于纯CDN方案。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>数据辅助决策</td>
+                        <td>实时监测流量数据，并做好ETL处理，供业务人员查看、取用；
+                            <br> 支持业务人员依据自身需求，调取数据做进一步处理OLAP分析。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- spread end -->
+        <div class="accurate_spread pb40 pt40">
+            <div class="container">
+                <h4 class="advantage">搭配推荐</h4>
+                <p>搭配使用海螺加速服务，为您的播放体验助力</p>
+                <p style="padding:15px 0">
+                    <a href="sdk.html" class="link">了解详情</a>
+                </p>
+            </div>
+        </div>
+        <!-- footer start -->
+        <%= htmlWebpackPlugin.options.footer %>
+            <%= htmlWebpackPlugin.options.statisticsFooter %>
+                <!-- footer end -->
+                <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                        <% } %>
+                            <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <script>
+                                    $(function () {
+                                        $(".tab_content_head li").mouseover(function () {
+                                            var index = $(this).index();
+                                            $(this).addClass('tab_active').css('color', "#2f94f2").siblings()
+                                                .removeClass('tab_active').css('color', "#000");
+                                            $(".tab_cons").eq(index).show().siblings().hide()
+                                        })
+                                        $(".tab_mobile li").click(function () {
+                                            $(this).addClass('showactive').siblings().removeClass(
+                                                'showactive');
+                                            var i = $(this).find("i");
+                                            i.removeClass('fa-chevron-down');
+                                            i.addClass('fa-chevron-up');
+                                            var si = $(this).siblings().find("i")
+                                            si.removeClass('fa-chevron-up');
+                                            si.addClass('fa-chevron-down');
+                                        })
+                                    })
+                                </script>
+                                <% } %>
+</body>
+<!-- <script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/bootstrap-3.37.min.js"></script>
+<script src="js/index.js"></script> -->
+
+</html>

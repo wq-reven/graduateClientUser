@@ -1,0 +1,258 @@
+.banner{
+    // background: #2b3748;
+    background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/index1.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width:100%;
+    height: 5.68rem;
+    margin-top: -0.68rem;
+    margin-bottom: 0.30rem;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.banner .container .banner_text {
+    width: 600px;
+    position: absolute;
+    bottom: 150px;
+    z-index: 1;
+}
+.banner .container {
+    height: 100%;
+    position: relative;
+}
+
+div.banner img {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+
+
+@media (max-width: 770px) {
+    .banner .container .banner_text p.p1 {
+        font-size: 26px;
+        margin-top: 80px;
+    }
+    .banner .container .banner_text p.p2 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .banner .container .banner_text{
+        width: 80%;
+        // height: 300px;
+        position: relative;
+        top: 120px;
+        z-index: 1;
+    }
+    .banner img {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+.feature-price-nav {
+    padding-bottom: 25px;
+}
+.feature-price-nav .price,.feature-price-nav .caculator {
+    float: left;
+    width: 200px;
+    height: 42px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 42px;
+    color: #000;
+}
+@media (max-width: 770px) {
+    .feature-price-nav .price,.feature-price-nav .caculator {
+        font-size: 16px;
+    }
+}
+.feature-price-nav a:hover {
+    color: #00a0de;
+    text-decoration: none;
+}
+.feature-price-nav a.active {
+    border: 1px solid #00a0de;
+    background: #BFDFFF;
+    text-decoration: none;
+}
+
+
+
+.cacu-type {
+    background-color: #f6f8fa;
+}
+
+.cacu-type .cacu-inner {
+    position:relative;
+    background-color: #fff;
+    padding: 30px 40px;
+    margin-bottom: 2px;
+}
+
+.cacu-type .cacu-inner h4 {
+    font-size: 24px;
+    font-weight: bold;
+    height: 26px;
+}
+
+.cacu-type .cacu-inner h4 svg {
+    margin-right: 20px;
+}
+
+.cacu-type .cacu-select {
+
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.pt40 {
+    padding-top: 40px;
+}
+
+.pb40 {
+    padding-bottom: 40px;
+}
+
+.pb100 {
+    padding-bottom: 100px;
+}
+
+.cacu-type .cacu-inner.pad0{
+    padding: 0
+}
+
+.cacu-type td{
+    border: 1px solid #e6eaef;
+    padding-left: 20px;
+    // font-weight: 600;
+    font-size: 16px
+}
+
+
+.cacu-type .select-inner {
+    width: 200px;
+    margin-top: 10px;
+}
+
+#select_price .cacu-type .cacu-inner p{
+    font-size: 16px;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.mr100 {
+    margin-right: 70px;
+}
+
+.height180 {
+    height: 180px;
+}
+
+.cacu-type .input-group-addon {
+    background: #fff;
+}
+
+.mb50 {
+    padding-bottom: 50px;
+}
+
+.select-ele {
+    margin-bottom: 20px;
+}
+
+.baifenbi50 {
+    width: 50%;
+    float: left;
+}
+.little_tip {
+    color: red;
+    position: absolute;
+    width: 227px;
+    right: 10px;
+    bottom: 32px;
+}
+.little_tip p {
+    padding: 10px;
+    line-height: 20px;
+}
+@media (max-width: 768px) {
+    .baifenbi50 {
+        width: 100%;
+        float: none;
+    }
+    .little_tip {
+        bottom: -9px;
+        left: 30px;
+    }
+    .select-header {
+        font-size: 14px;
+    }
+}
+@media ( min-width: 769px ) and ( max-width: 992px ) {
+    .little_tip {
+        bottom: -9px;
+        left: 30px;
+    }
+}
+
+.border-right {
+    border-right: 1px solid #f6f8fa;
+}
+
+.border-left {
+    border-left: 1px solid #f6f8fa;
+}
+
+.cacu-select p{
+    font-size: 16px;
+}
+
+.hide {
+    display: none;
+}
+
+.pl54 {
+    padding-left: 54px;
+}
+
+.rmb_title {
+    width: 100px;
+    display: inline-block;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.save {
+    padding-top: 20px;
+}
+
+.save_title {
+    padding-right: 36px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.border2red {
+    width: 300px;
+    border-top: 2px solid #DC143C;
+}

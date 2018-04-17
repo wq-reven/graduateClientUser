@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+</head>
+
+<body>
+    <header class="login_header">
+        <div class="container">
+            <div class="login_logo col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                <a href="index.html">
+                    <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/logo-02.png" alt="" class="login-logo-img">海螺服务
+                </a>
+            </div>
+            <div class="return_home col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                <a href="index.html">
+                    <i class="fa fa-home fa-x" aria-hidden="true"></i>返回首页
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="register_body">
+        <div class="vertical">
+            <div class="container text-center">
+                <div class="col-lg-4 col-md-6 col-sm-7 col-xs-12 register_frame">
+                    <div class="register_title">注册账户</div>
+                    <form class="form-horizontal" id="commentForm">
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">邮箱 : </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <input type="email" class="form-control" placeholder="邮箱地址" id="email" name="email" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">密码 : </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <input type="password" class="form-control" placeholder="必须是数字与字母的组合，至少6位" id="password" name="password" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">确认密码 : </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <input type="password" class="form-control" placeholder="再次确认密码" id="confirm_password" name="confirm_password" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">用户昵称 : </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <input type="text" class="form-control" placeholder="用户昵称" id="nickname" name="nickname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">手机号码 : </div>
+                            <div class="col-sm-9 col-xs-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon">+86</span>
+                                    <input type="text" class="form-control" placeholder="手机号码" id="phoneNum" name="phoneNum">
+                                </div>
+                                <label class="phoneNumError">请填写正确的手机号!</label>
+                                <label class="needPhoneNum">请输入手机号!</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3 control-label">验证码 : </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <input type="text" class="form-control" placeholder="输入验证码" id="verification" name="verification">
+                            </div>
+                            <div class="col-sm-5 col-xs-5">
+                                <input type="button" class="btn btn-success btn-get-code" style="margin-left:-15px" value="获取验证码" onclick="sendCode(this)"
+                                    id="getVerification" name="getVerification" />
+                            </div>
+                        </div>
+                        <div class="register_button">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-6 text-center">
+                                    <input class="btn btn-primary btn-block submit" type="submit" value="注册"></input>
+                                </div>
+                                <div class="col-sm-5 col-xs-6 text-center">
+                                    <a class="have_account" href="login.html">使用已有账户登录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="verification_email">
+            <div class="verification_model text-left">
+                <div class="verification_title">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>感谢您注册海螺云服务</div>
+                <div class="verification_content">确认邮件已发送至您的注册邮箱，请进入注册邮箱点击链接激活账户。</div>
+                <div class="verification_problem">
+                    <p>没有收到邮件？</p>
+                    <p>1.请检查邮箱地址是否正确。</p>
+                    <p>2.请检查您的邮件垃圾箱。</p>
+                    <p>3.若仍未收到确认，请尝试
+                        <a class="sendEmail_again">重新发送</a>
+                    </p>
+                </div>
+                <a class="verification_confirm">
+                    <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="//p0.ifengimg.com/a/2017/1222/jquery-3.2.1.min.js"></script>
+    <script src="//p0.ifengimg.com/a/2017/1222/bootstrap-3.37.min.js"></script>
+    <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+        <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+            <% } %>
+                <% for (key in htmlWebpackPlugin.files.chunks) { %>
+
+                    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                    <script>
+                        function checkMobile(phoneNum) {
+                            //var sMobile = $('#phoneNum').val();
+                            if (!(/^1[34578]\d{9}$/.test(phoneNum))) {
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        }
+                        var clock = '';
+                        var nums = 60;
+                        var btn;
+
+                        function sendCode(thisBtn) {
+                            // var thisBtn = $("#getVerification").val()
+                            // if(checkMobile(thisBtn) == false){
+                            //     return false
+                            // }
+                            // else
+                            btn = thisBtn;
+                            btn.disabled = true; //将按钮置为不可点击
+                            btn.value = nums + '秒后可重新获取';
+                            clock = setInterval(doLoop, 1000); //一秒执行一次
+                        }
+
+                        function doLoop() {
+                            nums--;
+                            if (nums > 0) {
+                                btn.value = nums + '秒后可重新获取';
+                            } else {
+                                clearInterval(clock); //清除js定时器
+                                btn.disabled = false;
+                                btn.value = '点击发送验证码';
+                                nums = 60; //重置时间
+                            }
+                        }
+                    </script>
+                    <% } %>
+</body>

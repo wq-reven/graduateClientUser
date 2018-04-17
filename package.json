@@ -1,0 +1,53 @@
+{
+    "name": "p2p_index",
+    "version": "1.0.0",
+    "description": "项目布局采用bootstrap-3.37\b响应式布局，适应pc端和移动端",
+    "main": "index.js",
+    "scripts": {
+        "uploadcdn": "node uploadcdn.js",
+        "start": "cross-env NODE_ENV=dev webpack-dev-server --history-api-fallback --port 8847",
+        "build": "cross-env NODE_ENV=production webpack --progress --profile --colors",
+        "buildstart": "http-server ./dist/",
+        "test": "cross-env NODE_ENV=test webpack --progress --profile --colors"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://fex.staff.ifeng.com/frontX/p2p_index.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.3",
+        "babel-loader": "^7.1.2",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "clean-webpack-plugin": "^0.1.17",
+        "copy-webpack-plugin": "^4.3.0",
+        "cross-env": "^5.1.1",
+        "css-loader": "^0.28.7",
+        "ejs": "^2.5.7",
+        "eslint": "^4.13.1",
+        "eslint-config-feng": "^1.4.0",
+        "eslint-plugin-babel": "^4.1.2",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "f.lib.ejs-loader": "http://fex.staff.ifeng.com/live/f.lib.ejs-loader/repository/archive.tar.gz?ref=1.0.3",
+        "f.lib.ejs-src-loader": "http://fex.staff.ifeng.com/live/f.lib.ejs-src-loader/repository/archive.tar.gz?ref=1.0.1",
+        "f.lib.upload": "http://fex.staff.ifeng.com/live/f.lib.upload/repository/archive.tar.gz?ref=master",
+        "file-loader": "^1.1.6",
+        "glob": "^7.1.2",
+        "html-webpack-plugin": "^2.30.1",
+        "http-server": "^0.10.0",
+        "ip": "^1.1.5",
+        "postcss-cssnext": "^3.0.2",
+        "postcss-loader": "^2.0.9",
+        "style-loader": "^0.19.1",
+        "uglify-es-webpack-plugin": "^0.10.0",
+        "url-loader": "^0.6.2",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^2.9.7",
+        "zip-webpack-plugin": "^2.1.0"
+    },
+    "dependencies": {}
+}

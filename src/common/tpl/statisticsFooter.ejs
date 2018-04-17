@@ -1,0 +1,106 @@
+<script src="//p0.ifengimg.com/a/2017/1222/jquery-3.2.1.min.js"></script>
+<script src="//p0.ifengimg.com/a/2017/1222/bootstrap-3.37.min.js"></script>
+
+<script>
+    function addFixed(params) {
+        var t, n, i, o;
+        return t = {
+            fxdClass: "fxd",
+            elem: "elem",
+            prevPosition: "relative"
+        },
+            params = params || t,
+            n = params.fxdClass,
+            o = params.prevPosition,
+            i = params.elem,
+            i.height(),
+            $(window).scrollTop() > 0 ? i.css({
+                position: "fixed"
+            }).addClass(n) : i.css({
+                position: o
+            }).removeClass(n),
+            $(window).scroll(function () {
+                var e;
+                if (!($(window).width() < 768))
+                    return e = $(window).scrollTop(),
+                        e > 0 ? i.css({
+                            position: "fixed"
+                        }).addClass(n) : i.css({
+                            position: o
+                        }).removeClass(n)
+            })
+    };
+    $(document).ready(function () {
+        addFixed({
+            elem: $("#navbar"),
+            fxdClass: "nav-bg",
+            prevPosition: "fixed"
+        });
+        $('body').addClass('loaded');
+        $('#loader-wrapper .load_title').remove();
+    });
+    $("#solution-dropdown-li").mouseover(function () {
+        $('#dropdown-menu-ul').show()
+    });
+    $("#solution-dropdown-li").mouseout(function () {
+        $('#dropdown-menu-ul').hide()
+    })
+    $("#product-dropdown-li").mouseover(function () {
+        $('#product-dropdown-menu-ul').show()
+    })
+    $("#product-dropdown-li").mouseout(function () {
+        $('#product-dropdown-menu-ul').hide()
+    })
+    $("#solution-down").click(function () {
+        $(this).attr("style", "float:right;display:none !important ")
+        $('#dropdown-menu-ul').show()
+        $("#solution-up").attr("style", "float:right;display:block ")
+    });
+    $("#solution-up").click(function () {
+        $(this).attr("style", "float:right;display:none ")
+        $('#dropdown-menu-ul').hide()
+        $("#solution-down").attr("style", "float:right;display:block ")
+    });
+    $("#product-down").click(function () {
+        $(this).attr("style", "float:right;display:none !important ")
+        $('#product-dropdown-menu-ul').show()
+        $("#product-up").attr("style", "float:right;display:block ")
+    })
+    $("#product-up").click(function () {
+        $(this).attr("style", "float:right;display:none ")
+        $('#product-dropdown-menu-ul').hide()
+        $("#product-down").attr("style", "float:right;display:block ")
+    })
+    if (new RegExp('hlplayer').test(document.cookie)) {
+        var hlplayer = document.cookie.split(';')[0].split('=')[1];
+        var hlplayerObj = JSON.parse(hlplayer);
+        var email = hlplayerObj.email;
+        // 验证邮箱格式
+        var reg = new RegExp('^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$');
+        if (reg.test(email)) {
+            $('.dropdownuserinfo').css('display', 'block');
+            $('#registNow').css('display', 'none');
+            $('#immedRegister').css('display', 'none');
+            $('.needSignin').css('display', 'none');
+            $('.caret').before(email);
+        } else {
+            console.log('注册邮箱格式不正确!');
+        }
+    } else {
+        $('.dropdownuserinfo').css('display', 'none');
+    }
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var domain = '.hlconnect.cn';
+        document.cookie = cname + "=" + cvalue + ";" + expires + '; path=/; domain=' + domain;
+    }
+    $('#logOut').click(function () {
+        setCookie('hlplayer', '', -1);
+        $('.dropdownuserinfo').css('display', 'none');
+        $('#registNow').css('display', 'block');
+        $('#immedRegister').css('display', 'block');
+        $('.needSignin').css('display', 'block');
+    });
+</script>

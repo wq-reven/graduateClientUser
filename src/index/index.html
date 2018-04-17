@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+                <link href="/lib/css/jquery.fullPage.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+        <div id="dowebok">
+            <div class="section section1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 text-left right_border left" id="videoDB_left">
+                            <div class="p_title">
+                                <h2 class="spread_head col-md-12 deviation_down55px">视频点播</h2>
+                            </div>
+                            <div class="p_content">
+                                <h4 class="col-md-12">
+                                    高可移植性的播放平台SDK接入和全网加速提供视频转码、视频加速等服务，按需获取视频播放流量，保证视频播放质量和流畅度，具有高性能、少配置、低价格、兼容性好的特点；每位用户的加入都扩展了资源内容，海量资源为您提供优质、可靠、低费的一站式视频服务。
+                                </h4>
+                            </div>
+                            <div class="p_icon col-md-12">
+                                <div class="row text-left">
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+                                        <span>对象存储</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-key fa-2x" aria-hidden="true"></i>
+                                        <span>访问控制</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-server fa-2x" aria-hidden="true"></i>
+                                        <span>智能多媒体API</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-ravelry fa-2x" aria-hidden="true"></i>
+                                        <span>融合CDN</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center right" id="videoDB_right">
+                            <h2>适用场景</h2>
+                            <div class="row">
+                                <div class="col-xs-6  col-lg-6 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-settings-64.png">
+                                        <h4>视频资源自动转码</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-6 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-rocket-take-off-64.png">
+                                        <h4>视频播放加速</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-center right_border left" id="videoZB_left">
+                            <h2>适用场景</h2>
+                            <div class="row">
+                                <div class="col-xs-6  col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-popular-red-64.png">
+                                        <h4>热点事件直播</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-unicef-64.png">
+                                        <h4>公益传播</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-buying-64.png">
+                                        <h4>电商促销</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-books-64.png">
+                                        <h4>教育课程</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-surgeon-skin-type-1-64.png">
+                                        <h4>医疗手术</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-4 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-american-football-helmet-64.png">
+                                        <h4>赛事直播</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 text-left right" id="videoZB_right">
+                            <div class="p_title">
+                                <h2 class="spread_head col-md-12 deviation_down55px">视频直播</h2>
+                            </div>
+                            <div class="p_content">
+                                <h4 class="col-md-12">
+                                    海螺视频直播解决方案依托强大的技术支持，大大降低网络拥塞、时延、带宽、高负载带来的影响，提供稳定、快速的直播接入服务，支持多种直播内容来源，不需要下载第三方插件程序，便捷高效。
+                                </h4>
+                            </div>
+                            <div class="p_icon col-md-12">
+                                <div class="row text-left">
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+                                        <span>对象存储</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+                                        <span>直播云</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-server fa-2x" aria-hidden="true"></i>
+                                        <span>智能多媒体API</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-ravelry fa-2x" aria-hidden="true"></i>
+                                        <span>融合CDN</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section section3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 text-left right_border left" id="moveZB_left">
+                            <div class="p_title">
+                                <h2 class="spread_head col-md-12 deviation_down55px">移动直播</h2>
+                            </div>
+                            <div class="p_content">
+                                <h4 class="col-md-12">
+                                    海螺提供移动端IOS、Android的视频服务解决方案，包括多版本产品的SDK集成，满足互联网时代用户对“碎片化内容”的巨大需求，随时随地观看视频，简洁易用。
+                                </h4>
+                            </div>
+                            <div class="p_icon col-md-12">
+                                <div class="row text-left">
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+                                        <span>对象存储</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-server fa-2x" aria-hidden="true"></i>
+                                        <span>智能多媒体API</span>
+                                    </div>
+                                    <div class="col-xs-6  col-md-3">
+                                        <i class="fa fa-ravelry fa-2x" aria-hidden="true"></i>
+                                        <span>融合CDN</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center right" id="moveZB_right">
+                            <h2>适用场景</h2>
+                            <div class="row">
+                                <div class="col-xs-6  col-lg-6 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-html5-64.png">
+                                        <h4>H5直播观看</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-lg-6 item">
+                                    <div class="">
+                                        <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-visual-game-boy-64.png">
+                                        <h4>游戏直播</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section4">
+                <div class="container open">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <div class="p_title">
+                                <h2 class="spread_head col-md-12 deviation_down55px">播放器解决方案</h2>
+                            </div>
+                            <div class="p_content">
+                                <h4 class="col-md-10">
+                                    海螺播放器提供了融合HTTP（包括HTTPS、HTTP2）、WebRTC等的多种协议、多源、低延迟、高带宽利用率的流媒体加速能力，支持多种视频格式；自定义视频封面及其他个性化设置，适合基本视频播放需求和高级定制，让您的播放器独一无二。
+                                </h4>
+                            </div>
+                            <div class="p_icon col-md-12">
+                                <div class="player text-center">
+                                    <a href="http://172.30.157.181:4000/zh-cn/player/index.html">Web API</a>
+                                    <a href="http://172.30.157.181:4000/zh-cn/player/iosIn.html">iOS SDK</a>
+                                    <a href="http://172.30.157.181:4000/zh-cn/player/androidIn.html">Android SDK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot_position">
+                    <%= htmlWebpackPlugin.options.footer %>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer start -->
+
+        <%= htmlWebpackPlugin.options.statisticsFooter %>
+            <!-- footer end -->
+            <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                    <% } %>
+                        <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                            <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                            <% } %>
+                                <script src="/lib/js/jquery.fullPage.min.js"></script>
+                                <script src="/lib/js/jquery.easing.min.js"></script>
+                                <script>
+                                    $(function () {
+                                        $('#dowebok').fullpage({
+                                            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#233040'],
+                                            anchors: ['section1', 'section2', 'section3', 'section4'],
+                                            'navigation': true,
+                                            'navigationColor': 'white',
+                                            'keyboardScrolling': true,
+                                            onLeave: function (index, direction) {
+                                                var ww = $(window).width();
+                                                if (ww > 768) {
+                                                    if (index == 1) {
+                                                        $('#videoDB_left').animate({
+                                                            left: '-120%'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#videoDB_right').animate({
+                                                            right: '-220%'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                    if (index == 2) {
+                                                        $('#videoZB_left').animate({
+                                                            left: '-120%'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#videoZB_right').animate({
+                                                            right: '-120%'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                    if (index == 3) {
+                                                        $('#moveZB_left').animate({
+                                                            left: '-120%'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#moveZB_right').animate({
+                                                            right: '-120%'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                }
+                                            },
+                                            afterLoad: function (anchorLink, index) {
+                                                console.log(anchorLink);
+                                                var ww = $(window).width();
+                                                if (ww > 768) {
+                                                    if (index == 1) {
+                                                        $('#videoDB_left').animate({
+                                                            left: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#videoDB_right').animate({
+                                                            right: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                    if (index == 2) {
+                                                        $('#videoZB_left').animate({
+                                                            left: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#videoZB_right').animate({
+                                                            right: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                    if (index == 3) {
+                                                        $('#moveZB_left').animate({
+                                                            left: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                        $('#moveZB_right').animate({
+                                                            right: '0'
+                                                        }, 800, 'easeOutExpo');
+                                                    }
+                                                }
+                                            },
+                                        });
+                                        $(window).resize(function () {
+                                            autoScrolling();
+                                        });
+
+                                        function autoScrolling() {
+                                            var $ww = $(window).width();
+                                            if ($ww < 768) {
+                                                $.fn.fullpage.setAutoScrolling(false);
+                                            } else {
+                                                $.fn.fullpage.setAutoScrolling(true);
+                                            }
+                                        }
+                                        autoScrolling();
+                                    });
+                                </script>
+</body>
+<!-- <script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/bootstrap-3.37.min.js"></script>
+<script src="js/index.js"></script> -->
+
+</html>

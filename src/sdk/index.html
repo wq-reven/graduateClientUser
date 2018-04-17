@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+
+        <!-- banner start -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="intro">
+                            <h2 class="title">
+                                海螺加速
+                            </h2>
+                        </div>
+                        <p class="text-left introduce">
+                            提供多平台下的SDK，接入简单方便，为您解决弱网环境中的无法连接、丢包、延时等常见问题。
+                        </p>
+                        <ul class="sdklink clearfix">
+                            <li>
+                                <a href="http://develop.hlconnect.cn/index.html">Android SDK</a>
+                            </li>
+                            <li>
+                                <a href="http://develop.hlconnect.cn/iosIn.html">IOS SDK</a>
+                            </li>
+                            <li>
+                                <a href="http://develop.hlconnect.cn/raiders.html">Web SDK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+        <!-- spread start -->
+        <div class="accurate_spread pb40 pt40">
+            <div class="container">
+                <h4 class="advantage">产品优势</h4>
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>优势</th>
+                        <th>海螺加速</th>
+                    </tr>
+                    <tr>
+                        <td>安全可靠</td>
+                        <td>全私有协议，传输数据使用高级别加密，防止信息流出，为您带来极致安全体验；
+                            <br> 业务隔离，采用低耦合嵌入方式接入，不接触任何业务逻辑，不存在数据泄密的可能性。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>服务质量稳定</td>
+                        <td>针对弱网环境设计，提高连接成功率；
+                            <br> 采用双向探测算法，缩短连接时间，快速获得加速服务；
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>优质体验</td>
+                        <td>采用预加载及缓存技术实现画面秒开，加速效果更显著；
+                            <br> 优化UDP加速，提高传输速度，降低卡顿、延时等问题。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>同原生调用</td>
+                        <td>轻量级SDK，小于1MB；
+                            <br> SDK经深度优化，不会给设备带来过重负担，对CPU、内存等不会产生明显影响。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- spread end -->
+        <div class="accurate_spread pb40">
+            <div class="container">
+                <h4 class="advantage">应用场景</h4>
+                <div class="tab_content pc">
+                    <ul class="tab_content_head">
+                        <li class="col-md-3 tab_active">音频点播</li>
+                        <li class="col-md-3">视频点播</li>
+                        <li class="col-md-3">直播</li>
+                        <li class="col-md-3">短视频</li>
+                    </ul>
+                    <div class="tab_">
+                        <div class="tab_cons">
+                            <p>迅速获取流文件，即开即用，提供优质便捷的加速体验</p>
+                            <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk1.jpeg" alt="">
+                        </div>
+                        <div class="tab_cons">
+                            <p>提供一站式视频点播服务，支持灵活转码，多种视频格式播放，为您呈现专业可靠、优质低费的视频服务。</p>
+                            <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk5.jpg" alt="">
+                        </div>
+                        <div class="tab_cons">
+                            <p>采用低成本P2P加速方案，快速搭建直播平台，同步播放内容，提供优质直播服务</p>
+                            <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk2.jpeg" alt="">
+                        </div>
+                        <div class="tab_cons">
+                            <p>使用预加载及缓存技术，提供高流畅度、高可用性的加速体验</p>
+                            <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content mobile">
+                    <ul class="tab_mobile">
+                        <li class="showactive">
+                            <span class="mobile_title">音频点播 <i class="fa fa-chevron-up"></i></span>
+                            <div class="tab_child">
+                                <p>使用预加载及缓存技术，提供高流畅度、高可用性的加速体验</p>
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk1.jpeg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mobile_title">视频点播<i class="fa fa-chevron-down"></i></span>
+                            <div class="tab_child">
+                                <p>提供一站式视频点播服务，支持灵活转码，多种视频格式播放，为您呈现专业可靠、优质低费的视频服务。</p>
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk5.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mobile_title">直播<i class="fa fa-chevron-down"></i></span>
+                            <div class="tab_child">
+                                <p>采用低成本P2P加速方案，快速搭建直播平台，同步播放内容，提供优质直播服务</p>
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk2.jpeg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mobile_title">短视频<i class="fa fa-chevron-down"></i></span>
+                            <div class="tab_child">
+                                <p>使用预加载及缓存技术，提供高流畅度、高可用性的加速体验</p>
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/sdk4.jpg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accurate_spread pb40 pt40">
+            <div class="container">
+                <h4 class="advantage">搭配推荐</h4>
+                <p>海螺播放器为您直观展现加速效果，并提供加速数据监测服务，辅助数据决策。</p>
+                <p style="padding:15px 0">
+                    <a href="player.html" class="link">了解详情</a>
+                </p>
+            </div>
+        </div>
+        <!-- footer start -->
+        <%= htmlWebpackPlugin.options.footer %>
+            <%= htmlWebpackPlugin.options.statisticsFooter %>
+                <!-- footer end -->
+                <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                        <% } %>
+                            <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <script>
+                                    $(function () {
+                                        $(".tab_content_head li").mouseover(function () {
+                                            var index = $(this).index();
+                                            $(this).addClass('tab_active').css('color', "#2f94f2").siblings()
+                                                .removeClass('tab_active').css('color', "#000");
+                                            $(".tab_cons").eq(index).show().siblings().hide()
+                                        })
+                                        $(".tab_mobile li").click(function(){
+                                            $(this).addClass('showactive').siblings().removeClass('showactive');
+                                            var i = $(this).find("i");
+                                            i.removeClass('fa-chevron-down');
+                                            i.addClass('fa-chevron-up');
+                                            var si = $(this).siblings().find("i")
+                                            si.removeClass('fa-chevron-up');
+                                            si.addClass('fa-chevron-down');
+                                        })
+                                    })
+                                </script>
+                                <% } %>
+</body>
+<!-- <script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/bootstrap-3.37.min.js"></script>
+<script src="js/index.js"></script> -->
+
+</html>

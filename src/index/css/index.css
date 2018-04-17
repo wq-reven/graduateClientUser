@@ -1,0 +1,96 @@
+.p_title{
+    margin: 20px 0 20px 0px;
+}
+.p_content h4{
+    padding-top: 20px;
+    line-height: 47px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.open {
+    margin-bottom: 4rem;
+}
+.p_icon {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.p_icon span{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+    position: absolute;
+    bottom: 1px;
+    left: 55px;
+}
+.p_icon .player a {
+    width: 170px;
+    height: 50px;
+    float: left;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 55px;
+    margin-bottom: 15px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.p_icon .player a:hover {
+    color: black;
+    background-color: #fff;
+}
+.item{
+    margin-top:70px;
+}
+.item h4{
+    padding-top: 20px;
+    font-size: 14px;
+}
+.section { text-align: center; color: #fff;}
+.section1 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section4.png'); background-size:100% 100%;background-repeat:no-repeat;}
+.section2 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section6.png'); background-size:100% 100%;background-repeat:no-repeat;}
+.section3 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section7.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
+.cover {
+    background-color:rgba(0,0,0,0.5);
+    z-index:100;
+}
+.right_border{
+
+    border-right:1px solid white;
+}
+.bg101{
+    background: url(//p0.ifengimg.com/fe/zl/test/live/p2p_index/bg101.png) 100% 100% no-repeat;
+}
+.foot_position {
+    width:100%;
+    position: absolute;
+    bottom: 0px;
+}
+@media (max-width: 991px) {
+    .right_border{
+        border-right: 0px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid white;
+    }
+    .item {
+        margin-top: 15px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    .p_content h4{
+        font-size: 15px;
+        line-height: 30px;
+    }
+}
+
+@media (min-width: 769px) {
+    #videoZB_left { position: relative; left: -120%;font: 50px "Microsoft Yahei";}
+    #videoZB_right { position: relative; right: -220%;font: 50px "Microsoft Yahei";}
+    #moveZB_left { position: relative; left: -120%;font: 50px "Microsoft Yahei";}
+    #moveZB_right { position: relative; right: -220%;font: 50px "Microsoft Yahei";}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}

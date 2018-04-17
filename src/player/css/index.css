@@ -1,0 +1,87 @@
+.jumbotron{
+    background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/index2.png')
+}
+.title{
+    text-align: left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.introduce{
+    margin-top: 40px;
+    padding: 10px 0;
+    font-size: 17px !important;
+}
+ul {
+    padding-left: 0 ;
+}
+p{
+    font-family: PingFangSC-Light,'helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei',simsun,sans-serif ;
+    font-size: 14px;
+}
+.sdklink{
+    text-align: left;
+    display: block;
+    margin-top: 30px;
+    padding-left: 0;
+}
+.sdklink li{
+    list-style: none;
+    float: left;
+}
+.sdklink li a{
+    padding: 10px 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+.sdklink li a:hover {
+    color: black;
+    background-color: #fff;
+    transition: background-color 0.4s;
+}
+.advantage{
+    border-left:3px solid #2f94f2;
+    padding-left: 10px;
+    margin: 10px 0 20px;;
+}
+
+@media (max-width:992px){
+    .sdklink li a{
+        padding: 10px 20px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        margin-right: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.link{
+    color:#2f94f2;
+    border: 1px solid #2f94f2;
+    padding: 10px 30px;
+    border-radius: 7px;
+}
+.link:hover{
+    color: #fff;
+    background-color: #2f94f2;
+    text-decoration: none;
+    transition: background-color 0.4s;
+}
+table tr th{
+    text-align: center;
+}
+table tr td{
+    font-family: PingFangSC-Light,'helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei',simsun,sans-serif !important;
+    font-size: 14px;
+    line-height: 24px !important;
+    display:table-cell !important;
+    vertical-align:middle !important
+}

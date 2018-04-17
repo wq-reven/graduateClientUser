@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+
+        <!-- banner start -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="intro">
+                            <h2 class="title">
+                                海螺产品总览
+                            </h2>
+                        </div>
+                        <p class="text-left introduce">
+                            深度分析加速场景，提供专业的加速服务、流媒体播放及数据决策方案。
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <!-- <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u56.png"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+        <!-- spread start -->
+        <div class="accurate_spread pb40 pt40" id="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="product_content_title">
+                        <div class="blue_line"></div>
+                        <div class="product_content_subTitle">海螺加速</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_ul">
+                        <ul>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u748.png" />
+                                <p>提供轻量级集成SDK接入，小于1MB</p>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u750.png" />
+                                <p>配置简单，文档完备，步骤清晰明确</p>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u751.png" />
+                                <p>优化连接和传输算法，提供优质的加速体验</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_summary">
+                        <p>无线网络或建筑物密集的弱网环境中，解决常见的丢包、超时、连接中断、难以接入网络等问题，保持服务稳定。</p>
+                        <a class="go_now" href="sdk.html">立即体验</a>
+                        <div class="clear_float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spread_progress pb40 pt40 mb5" id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="product_content_title">
+                        <div class="blue_line"></div>
+                        <div class="product_content_subTitle">流媒体加速</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_ul">
+                        <ul>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u754.png" />
+                                <p>实时监控、预测网络状况，智能调整播放策略
+                                    <br>有效降低延时和卡顿</p>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u755.png" />
+                                <p>预加载及缓存技术实现画面秒开</p>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u758.png" />
+                                <p>支持多种文件格式</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_summary">
+                        <p>优质的流媒体播放体验，支持直播、纯音频播放的多用途播放器。</p>
+                        <a class="go_now" href="player.html">立即体验</a>
+                        <div class="clear_float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accurate_spread pb40 pt40" id="section3">
+            <div class="container">
+                <div class="row">
+                    <div class="product_content_title">
+                        <div class="blue_line"></div>
+                        <div class="product_content_subTitle">数据决策</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_ul">
+                        <ul>
+                            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u760.png" />
+                                <p>提取筛选数据，并直观地为您呈现异常数据
+                                    <br>随时了解业务情况</p>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/u761.png" />
+                                <p>可对数据进行本地下载，方便二次操作</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="product_content_summary">
+                        <p>实时监测加速数据，加速可用性、P2P分享率（P2P加速流量占总加速流量的比例）等多维度数据的统计与联合分析，辅助商业决策。</p>
+                        <a class="go_now" href="player.html">立即体验</a>
+                        <div class="clear_float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spread_progress pb40 pt40" id="immedRegister">
+            <div class="container">
+                <a href="http://console.hlconnect.cn/user/register" class="immed_register">立即注册</a>
+            </div>
+        </div>
+        <!-- <div class="accurate_spread pb40 pt40 bg1" id="section1">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-3 product_content_left">
+                    <div class="content_title">
+                        <div class="product_img_box"></div>
+                        <p class="content_title_p">海螺加速</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 product_content_right">
+                    <div class="content_main">
+                        <div class="content_main_top">
+                            <p>无线网络或建筑物密集的弱网环境中，解决常见的丢包、超时、连接中断、难以接入网络等问题，保持服务稳定</p>
+                        </div>
+                        <div class="content_main_cen">
+                            <p>• 提供轻量级集成SDK接入，小于1MB</p>
+                            <p>• 配置简单，文档完备，步骤清晰明确</p>
+                            <p>• 优化连接和传输算法，提供优质的加速体验</p>
+                        </div>
+                        <div class="content_main_bot">
+                            <a href="sdk.html">立即体验</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="accurate_spread pb40 pt40 bg2" id="section2">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-3 product_content_left">
+                    <div class="content_title">
+                        <div class="product_img_box1"></div>
+                        <p class="content_title_p">流媒体播放</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 product_content_right">
+                    <div class="content_main">
+                        <div class="content_main_top">
+                            <p>优质的流媒体播放体验，支持直播、纯音频播放的多用途播放器</p>
+                        </div>
+                        <div class="content_main_cen">
+                            <p>• 实时监控、预测网络状况，智能调整播放策略，有效降低延时和卡顿</p>
+                            <p>• 预加载及缓存技术实现画面秒开</p>
+                            <p>•支持多种文件格式</p>
+                        </div>
+                        <div class="content_main_bot">
+                            <a href="player.html">立即体验</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="accurate_spread pb40 pt40 bg1" id="section3">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-3 product_content_left">
+                    <div class="content_title">
+                        <div class="product_img_box2"></div>
+                        <p class="content_title_p">数据决策</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 product_content_right">
+                    <div class="content_main">
+                        <div class="content_main_top">
+                            <p>实时监测加速数据，加速可用性、P2P分享率（P2P加速流量占总加速流量的比例）等多维度数据的统计与联合分析，辅助商业决策</p>
+                        </div>
+                        <div class="content_main_cen">
+                            <p>• 提取筛选数据，并直观地为您呈现异常数据，随时了解业务情况</p>
+                            <p>• 可对数据进行本地下载，方便二次操作</p>
+                        </div>
+                        <div class="content_main_bot">
+                            <a href="player.html">立即体验</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- spread end -->
+
+        <!-- footer start -->
+        <%= htmlWebpackPlugin.options.footer %>
+            <%= htmlWebpackPlugin.options.statisticsFooter %>
+                <!-- footer end -->
+                <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                        <% } %>
+                            <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <% } %>
+</body>
+<!-- <script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/bootstrap-3.37.min.js"></script>
+<script src="js/index.js"></script> -->
+
+</html>

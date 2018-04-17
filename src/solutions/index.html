@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <% } %>
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+
+        <!-- banner start -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="intro">
+                            <h2 class="title">
+                                海螺平台解决方案
+                            </h2>
+                        </div>
+                        <p class="text-left introduce">
+                            针对流媒体加速过程中的常见问题，精心打造各场景下的解决方案。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+        <div class="accurate_spread pb40 pt40 bg" id="surroundings">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="spread_head">弱网环境解决方案</h3>
+                        <hr class="my-4">
+                    </div>
+                </div>
+                <div class="row solutions_list">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center blank_line">
+                        <ul class="icon_blank">
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-broken-link-50.png">
+                                <p>连接失败</p>
+                            </li>
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-synchronize-50.png">
+                                <p>操作相应延时</p>
+                            </li>
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-close-window-50.png">
+                                <p>加载中断</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 right content_blank">
+                        <p>海螺提供强大易用的SDK集成，采用双向探测算法，缩短复杂网络环境下的连通时间；</p>
+                        <p>海螺加速采用梯度计费，相对传统CDN价格低50%，可用性提高2%，提供高性价比的加速服务；</p>
+                        <p>实时优化UDP加速算法，优先选择P2P加速。</p>
+                        <a data-toggle="modal" data-target="#myModal" class="ask_now">立即咨询</a>
+                    </div>
+                    <div class="clear_float"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accurate_spread pb40 pt40" id="internet">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="spread_head">移动互联网解决方案</h3>
+                        <hr class="my-4">
+                    </div>
+                </div>
+                <div class="row solutions_list">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 left blank_line content_blank text-right">
+                        <p>智能探测网络链路状况，启用FEC功能，提高抗丢包率;</p>
+                        <p>预测链路阻塞概率，自适应调节网络缓存，流畅率提高3%;</p>
+                        <p>实时计算和预测带宽实际速率，精准重传控制，避免数据请求异常情况发生.</p>
+                        <a data-toggle="modal" data-target="#myModal" class="ask_now">立即咨询</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                        <ul class="icon_blank">
+                            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-video-playlist-grey-50.png">
+                                <p>播放卡顿</p>
+                            </li>
+                            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-phonelink-erase-50.png">
+                                <p>链路状况有变化</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+
+                    <div class="clear_float"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accurate_spread pb40 pt40 bg" id="player">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="spread_head">播放器解决方案</h3>
+                        <hr class="my-4">
+                    </div>
+                </div>
+                <div class="row solutions_list">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center blank_line">
+                        <ul class="icon_blank">
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-monitor-grey-50.png">
+                                <p>直播</p>
+                            </li>
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-cinema-50.png">
+                                <p>点播</p>
+                            </li>
+                            <li class="col-lg-6 col-md-6 col-sm-4 col-xs-4">
+                                <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/icons8-musical-50.png">
+                                <p>音频</p>
+                            </li>
+                            <div class="clear_float"></div>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 right content_blank">
+                        <p>轻量级应用，体积小，对内存和CPU影响可忽略不计;</p>
+                        <p>接入简单，人性化界面设计，交互简单易懂;</p>
+                        <p>支持多种视频格式和流媒体协议.</p>
+                        <a data-toggle="modal" data-target="#myModal" class="ask_now">立即咨询</a>
+                    </div>
+                    <div class="clear_float"></div>
+                </div>
+            </div>
+        </div>
+        <div class="accurate_spread pb40 pt40" id="immedRegister">
+            <div class="container">
+                <a href="http://console.hlconnect.cn/user/register" class="immed_register">立即注册</a>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">产品及服务咨询</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="queryContent" class="col-sm-2 control-label">咨询内容：</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" rows="3" placeholder="最多输入255个字" id="queryContent"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="username" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="companyname" class="col-sm-2 control-label">公司名称：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="companyname" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="province" class="col-sm-2 control-label">省份：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="province" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userphone" class="col-sm-2 control-label">联系电话：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="userphone" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="useremail" class="col-sm-2 control-label">电子邮箱：</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="useremail" placeholder="">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- spread start -->
+        <!-- footer start -->
+        <%= htmlWebpackPlugin.options.footer %>
+            <%= htmlWebpackPlugin.options.statisticsFooter %>
+                <!-- footer end -->
+                <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                        <% } %>
+                            <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+
+                                <% } %>
+</body>
+<!-- <script src="lib/jquery-3.2.1.min.js"></script>
+<script src="lib/bootstrap-3.37.min.js"></script>
+<script src="js/index.js"></script> -->
+
+</html>

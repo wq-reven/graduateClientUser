@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>游戏直播</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="游戏直播">
+            <rect id="Rectangle-5" stroke="#FFFFFF" x="5.44117647" y="5.44117647" width="24.4117647" height="24.4117647"></rect>
+            <rect id="Rectangle-5-Copy-2" stroke="#FFFFFF" x="9.5" y="9.5" width="16.6470588" height="16.6470588"></rect>
+            <rect id="Rectangle-5-Copy-3" stroke="#FFFFFF" transform="translate(17.727922, 17.727922) rotate(-45.000000) translate(-17.727922, -17.727922) " x="9.22792208" y="9.227922" width="17" height="17"></rect>
+            <rect id="Rectangle-5-Copy" stroke="#FFFFFF" transform="translate(17.968831, 17.968831) rotate(45.000000) translate(-17.968831, -17.968831) " x="5.76294865" y="5.76294885" width="24.4117647" height="24.4117647"></rect>
+            <g id="Oval-2-Copy" transform="translate(3.000000, 3.000000)">
+                <g id="path-1-link" fill="#7BC8FF">
+                    <circle id="path-1" cx="2.52941176" cy="2.52941176" r="2"></circle>
+                </g>
+                <circle id="Oval" stroke="#FFFFFF" cx="2.52941176" cy="2.52941176" r="2.5"></circle>
+            </g>
+            <g id="Oval-2-Copy-3" transform="translate(3.000000, 27.000000)">
+                <g id="path-2-link" transform="translate(0.000000, 1.000000)" fill="#7BC8FF">
+                    <circle id="path-2" cx="2.52941176" cy="2.2352941" r="2"></circle>
+                </g>
+                <circle id="Oval" stroke="#FFFFFF" cx="2.52941176" cy="3.2352941" r="2.5"></circle>
+            </g>
+            <g id="Oval-2-Copy-2" transform="translate(27.000000, 3.000000)">
+                <g id="path-3-link" transform="translate(1.000000, 0.000000)" fill="#7BC8FF">
+                    <circle id="path-3" cx="2.2352941" cy="2.52941176" r="2"></circle>
+                </g>
+                <circle id="Oval" stroke="#FFFFFF" cx="3.2352941" cy="2.52941176" r="2.5"></circle>
+            </g>
+            <g id="Oval-2-Copy-4" transform="translate(27.000000, 27.000000)">
+                <g id="path-4-link" transform="translate(1.000000, 1.000000)" fill="#7BC8FF">
+                    <circle id="path-4" cx="2.2352941" cy="2.2352941" r="2"></circle>
+                </g>
+                <circle id="Oval" stroke="#FFFFFF" cx="3.2352941" cy="3.2352941" r="2.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
