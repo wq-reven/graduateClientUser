@@ -50,12 +50,12 @@
                                 <input type="password" class="form-control" placeholder="再次确认密码" id="confirm_password" name="confirm_password" />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="col-sm-3 col-xs-3 control-label">用户昵称 : </div>
                             <div class="col-sm-9 col-xs-9">
                                 <input type="text" class="form-control" placeholder="用户昵称" id="nickname" name="nickname">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <div class="col-sm-3 col-xs-3 control-label">手机号码 : </div>
                             <div class="col-sm-9 col-xs-9">
@@ -123,7 +123,7 @@
                     <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
                     <script>
                         function checkMobile(phoneNum) {
-                            //var sMobile = $('#phoneNum').val();
+                            var sMobile = $('#phoneNum').val();
                             if (!(/^1[34578]\d{9}$/.test(phoneNum))) {
                                 return false;
                             } else {
@@ -134,12 +134,7 @@
                         var nums = 60;
                         var btn;
 
-                        function sendCode(thisBtn) {
-                            // var thisBtn = $("#getVerification").val()
-                            // if(checkMobile(thisBtn) == false){
-                            //     return false
-                            // }
-                            // else
+                        function startTime(thisBtn) {
                             btn = thisBtn;
                             btn.disabled = true; //将按钮置为不可点击
                             btn.value = nums + '秒后可重新获取';
@@ -157,6 +152,41 @@
                                 nums = 60; //重置时间
                             }
                         }
+                        /**
+                         * 获取验证码
+                         */
+                            function sendCode(thisBtn){
+                                let phoneNum = $('#phoneNum').val();
+                                if (phoneNum !== '') {
+                                    let data = {
+                                        phone: phoneNum,
+                                        type:'register'
+                                    }
+                                    if (checkMobile(phoneNum)) {
+                                        startTime(thisBtn)
+                                        $.ajax({
+                                            type: 'get',
+                                            url: 'http://localhost:3300/user/sendSmsCode',
+                                            data: {
+                                                body: JSON.stringify(data)
+                                            },
+                                            contentType: 'application/json; charset=utf-8',
+                                            beforeSend: function (xhr) {
+                                                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                                            },
+                                            success: function (res) {
+                                                console.log(res);
+                                                // if (res.code == 200) {
+                                                //}
+                                            },
+                                        });
+                                    } else {
+                                        $('.phoneNumError').css({ display: 'block' });
+                                    }
+                                } else {
+                                    $('.needPhoneNum').css({ display: 'block' });
+                                }
+                            };
                     </script>
                     <% } %>
 </body>

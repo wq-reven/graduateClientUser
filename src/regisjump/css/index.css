@@ -1,42 +1,41 @@
-html,body{
+html,
+body {
     height: 100%;
 }
-.login_header{
+
+.login_header {
     width: 100%;
     height: 60px;
-    line-height:60px;
-    position: fixed;
+    line-height: 60px;
+    background: #303848
 }
-.login_logo img{
+
+.login_logo img {
     height: 40px;
     width: 40px;
     margin-right: 10px;
 }
-.login_logo a{
+
+.login_logo a {
     color: #fff;
     text-decoration: none;
 }
 
-.return_home a{
+.return_home a {
     color: #fff;
     text-decoration: none;
 }
-.return_home i{
+
+.return_home i {
     margin-right: 5px;
 }
-.register_body{
-    display: table;
-    width: 100%;
-    height: 100%;
-    background: url('/lib/images/index_bg.jpg') no-repeat;
-    background-size: cover;
-    color: #fff;
-}
-.vertical{
+
+.vertical {
     display: table-cell;
     vertical-align: middle;
 }
-.register_frame{
+
+.register_frame {
     float: right;
     border: 1px solid white;
     padding: 20px 20px 20px 10px;
@@ -44,53 +43,66 @@ html,body{
     color: black;
     border-radius: 10px;
 }
-.register_title{
+
+.register_title {
     color: #0000009e;
     font-weight: bold;
     font-size: 22px;
     margin-bottom: 17px;
 }
+
 .form-group {
     margin-bottom: 22px;
 }
-.control-label{
+
+.control-label {
     padding-right: 0px;
 }
-.have_account{
+
+.have_account {
     height: 34px;
     line-height: 34px;
 }
-.have_account:hover{
+
+.have_account:hover {
     text-decoration: none;
 }
-.btn-primary{
-    background-color:#356ef2;
+
+.btn-primary {
+    background-color: #356ef2;
 }
-.btn-primary:hover{
-    background-color:#305ec7;
+
+.btn-primary:hover {
+    background-color: #305ec7;
 }
-.register_button{
+
+.register_button {
     margin: 0 auto;
 }
-.register_button input{
+
+.register_button input {
     width: 70% !important;
     float: right;
 }
-label.error{
+
+label.error {
     position: absolute;
     left: 16px;
     color: red;
     font-size: 10px;
 }
-.phoneNumError, .needPhoneNum{
-    display:none;
+
+.phoneNumError,
+.needPhoneNum {
+    display: none;
     font-size: 12px;
     color: red;
-    position:absolute;
+    position: absolute;
     left: 17px;
 }
-@media (max-width: 767px)  {
-    .login_header{
+
+@media (max-width: 767px) {
+    .login_header {
         background: #313848;
         border-bottom: 0px;
     }
@@ -99,15 +111,16 @@ label.error{
         margin-bottom: 0;
         text-align: right;
     }
-    .register_body{
+    .register_body {
         background: #fff;
     }
     .vertical {
-        display:block;
+        display: block;
         margin-top: 62px;
     }
 }
-.verification_email{
+
+.verification_email {
     display: none;
     width: 100%;
     height: 100%;
@@ -120,7 +133,8 @@ label.error{
     z-index: 100;
     padding-top: 20%;
 }
-.verification_model{
+
+.verification_model {
     position: relative;
     margin: 0px auto;
     color: black;
@@ -130,23 +144,28 @@ label.error{
     border-radius: 5px;
     padding: 36px;
 }
-.verification_title i{
+
+.verification_title i {
     color: red;
 }
-.verification_title{
+
+.verification_title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.verification_content{
+
+.verification_content {
     margin-bottom: 25px;
     font-size: 15px;
 }
-.verification_problem{
+
+.verification_problem {
     font-size: 13px;
     color: #000000c9;
 }
-.verification_confirm{
+
+.verification_confirm {
     position: absolute;
     top: 0px;
     right: 6px;
@@ -155,12 +174,21 @@ label.error{
     height: 30px;
     text-align: center;
     color: #fff;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .sendEmail_again {
     cursor: pointer;
-
 }
-.sendEmail_again:hover{
+
+.sendEmail_again:hover {
     text-decoration: none;
+}
+.register_body{
+    height: 500px;
+    background: #f9f9f9
+}
+.jump_body{
+    margin-top: 100px;
+    font-size: 20px
 }

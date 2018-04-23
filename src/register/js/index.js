@@ -1,27 +1,5 @@
 import '../css/index.css';
-/**
- * 发送验证邮件方法
- * @param {email}
- */
-function sendEmail() {
-    console.log('发送验证邮件');
-    $.ajax({
-        type: 'GET',
-        url: 'http://10.50.16.20:7080/help/sendRegisterMail',
-        data: {
-            email: $('#email').val(),
-        },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
-        },
-        success: function(res) {
-            console.log(res);
-        },
-    });
-}
-function flightHandler() {
-    alert(1);
-}
+const md5 = require('md5');
 /**
  * 用户注册方法
  * @param {} param0
@@ -29,63 +7,32 @@ function flightHandler() {
 function register() {
     let data = {
         email: $('#email').val(),
-        nickname: $('#nickname').val(),
-        password: $('#password').val(),
+        password: md5($('#password').val()),
         phone: $('#phoneNum').val(),
         phoneVerificationCode: $('#verification').val(),
     };
     $.ajax({
-        type: 'POST',
-        url: 'http://10.50.16.20:7080/consoleapi/login/register',
-        data: JSON.stringify(data),
+        type: 'get',
+        url: 'http://localhost:3300/user/newUserRegister',
+        data: {
+            body: JSON.stringify(data)
+        },
         contentType: 'application/json; charset=utf-8',
         beforeSend: function(xhr) {
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         },
         success: function(res) {
-            console.log(res);
-            // if (res.code == 200) {
-            console.log('注册成功');
-            $('.verification_email').css({ display: 'block' });
-            sendEmail();
-            //}
+             if (res.code == 0) {
+                location.href = 'regisjump.html'
+            } else if (res.data.dbResult == '验证码错误') {
+                 alert('验证码错误,请重新获取！')
+            } else {
+                 alert('注册失败，请重试！')
+            }
         },
     });
 }
-/**
- * 重新发送验证邮件
- * @param {}
- */
-$('.sendEmail_again').click(() => {
-    sendEmail();
-});
-/**
- * 获取验证码
- */
-$('#getVerification').click(() => {
-    let phoneNum = $('#phoneNum').val();
-    if (phoneNum !== '') {
-        if (checkMobile(phoneNum)) {
-            $.ajax({
-                type: 'GET',
-                url: 'http://10.50.16.20:7080/consoleapi/help/sendMessage',
-                data: {
-                    phone: phoneNum,
-                },
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
-                },
-                success: function(res) {
-                    console.log(res);
-                },
-            });
-        } else {
-            $('.phoneNumError').css({ display: 'block' });
-        }
-    } else {
-        $('.needPhoneNum').css({ display: 'block' });
-    }
-});
+
 /**
  * 表单提交事件
  */

@@ -1,8 +1,9 @@
 .p_title{
-    margin: 20px 0 20px 0px;
+    margin: 20px 0 10px 0px;
+    text-align: center;
 }
 .p_content h4{
-    padding-top: 20px;
+    padding-top: 10px;
     line-height: 47px;
     font-size: 16px;
     font-weight: 400;
@@ -49,9 +50,9 @@
     font-size: 14px;
 }
 .section { text-align: center; color: #fff;}
-.section1 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section4.png'); background-size:100% 100%;background-repeat:no-repeat;}
-.section2 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section6.png'); background-size:100% 100%;background-repeat:no-repeat;}
-.section3 { background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index/solution_section7.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
+.section1 { background: url('/lib/images/index_bg2.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
+.section2 { background: url('/lib/images/index_bg1.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
+.section3 { background: url('/lib/images/index_bg4.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
 .cover {
     background-color:rgba(0,0,0,0.5);
     z-index:100;
@@ -93,4 +94,21 @@
     #moveZB_right { position: relative; right: -220%;font: 50px "Microsoft Yahei";}
 }
 @media (min-width: 768px) and (max-width: 991px) {
+}
+#videoZB_right{
+    background: #ccc4af;
+    opacity: 0.9;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+#videoDB_left{
+   background: #ccc4af;
+   opacity: 0.9;
+   position: absolute;
+   left: 0;
+   top: 30%;
+}
+#section1 .deviation_down55px{
+    font-size:35px !important
 }

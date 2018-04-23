@@ -49,5 +49,7 @@
         "webpack-dev-server": "^2.9.7",
         "zip-webpack-plugin": "^2.1.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "md5": "^2.2.1"
+    }
 }
