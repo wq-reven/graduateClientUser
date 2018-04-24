@@ -1,5 +1,6 @@
 import '../css/index.css';
 const md5 = require('md5')
+
 //登录
 $(function () {
     $('#login_mobile').click(function () {
@@ -18,13 +19,15 @@ $(function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             },
-            success: function (res) {
-                // if (res.code === 420) {
-                //     $('#phoneCode_error').show();
-                // } else if (res.code === 200) {
-                //     setCookie('hlplayer', JSON.stringify(res.data), 1);
-                //     location.assign('index.html');
-                // }
+            success: function (res) { 
+                if (res.data.dbResult === '验证码错误') {
+                    $('#phoneCode_error').show();
+                } else if (res.data.dbResult !== '登录失败') {
+                    sessionStorage.setItem('userInfo', JSON.stringify(res.data.dbResult));
+                    location.assign('index.html');
+                    // setCookie('hlplayer', JSON.stringify(res.data), 1);
+                    // location.assign('index.html');
+                }
             },
         });
     });
@@ -45,6 +48,14 @@ $(function () {
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             },
             success: function (res) {
+                if (res.data.dbResult !== '登录失败') {
+                    sessionStorage.setItem('userInfo', JSON.stringify(res.data.dbResult));
+                    location.assign('index.html');
+                    // setCookie('hlplayer', JSON.stringify(res.data), 1);
+                    // location.assign('index.html');
+                } else {
+                    alert('用户名或密码错误')
+                }
                 // if (res.code === 420) {
                 //     $('#code_error').show();
                 // } else if (res.code === 200) {
@@ -75,4 +86,12 @@ $(function () {
     $('#img_code').focus(function () {
         $('#code_error').hide();
     })
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var domain = '.hlconnect.cn';
+        document.cookie = cname + "=" + cvalue + ";" + expires + '; path=/; domain=' + domain;
+    }
 });
+

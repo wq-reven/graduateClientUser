@@ -11,13 +11,10 @@ html {
     background-color: #FFF;
     font-size: 100px;
 }
-
-
-
 /* ********************* Header Start! *********************** */
 nav.navbar {
     font-size: 14px;
-    min-height: 68px;
+    min-height: 50px;
     margin-bottom: 0;
     z-index: 1000;
     width: 100%;
@@ -42,7 +39,7 @@ nav.navbar:hover {
 .navbar-default .navbar-nav>li>a:visited {
     color: #FFF;
 }
-.navbar-header{min-height:68px}
+.navbar-header{min-height:50px}
 .navbar-default {
     background: transparent;
     color: #FFF;

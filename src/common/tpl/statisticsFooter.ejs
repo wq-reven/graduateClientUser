@@ -71,10 +71,12 @@
         $('#product-dropdown-menu-ul').hide()
         $("#product-down").attr("style", "float:right;display:block ")
     })
-    if (new RegExp('hlplayer').test(document.cookie)) {
-        var hlplayer = document.cookie.split(';')[0].split('=')[1];
-        var hlplayerObj = JSON.parse(hlplayer);
-        var email = hlplayerObj.email;
+    if ((sessionStorage.getItem('userInfo'))) {
+        // var hlplayer = document.cookie.split(';')[0].split('=')[1];
+        // var hlplayerObj = JSON.parse(hlplayer);
+        let userObj = JSON.parse(sessionStorage.getItem('userInfo'))
+        var email = userObj.email;
+        var avatar = userObj.avatar
         // 验证邮箱格式
         var reg = new RegExp('^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$');
         if (reg.test(email)) {
@@ -83,6 +85,7 @@
             $('#immedRegister').css('display', 'none');
             $('.needSignin').css('display', 'none');
             $('.caret').before(email);
+            $('.avatar img').attr('src', avatar);
         } else {
             console.log('注册邮箱格式不正确!');
         }
@@ -97,7 +100,8 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + '; path=/; domain=' + domain;
     }
     $('#logOut').click(function () {
-        setCookie('hlplayer', '', -1);
+        //setCookie('hlplayer', '', -1);
+        sessionStorage.removeItem('userInfo');
         $('.dropdownuserinfo').css('display', 'none');
         $('#registNow').css('display', 'block');
         $('#immedRegister').css('display', 'block');
