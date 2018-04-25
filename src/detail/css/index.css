@@ -1,0 +1,287 @@
+#navbar {
+    position: static !important;
+    background: dimgrey
+}
+
+.contents {
+    position: relative;
+    z-index: 4;
+    background: #f5f5f6;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
+}
+
+.contents .left {
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 21px;
+}
+
+.contents .right {
+    float: right;
+    display: inline;
+    margin: 17px 0 0 0;
+}
+
+.contents1 {
+    position: relative;
+    z-index: 4;
+    background: #fff;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.box1 {
+    padding-top: 30px;
+}
+
+.jiedao {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 30px 40px 30px 20px;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.orderhandle {
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.orderbutton {
+    padding: 20px 0 0 10px;
+}
+
+.jiedao ul li {
+    padding: 10px 0;
+}
+
+.jiedao ul li span {
+    display: inline-block;
+    padding-right: 20px;
+    color: #aeb0b1
+}
+
+.jiage {
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    list-style: none;
+    cursor: pointer;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    margin: 10px 0;
+    padding-left: 10px;
+}
+
+.jiage1 {
+    border: 1px solid red;
+}
+
+.prices {
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    color: #ff6700;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0 20px;
+}
+
+.mix2 a {
+    color: #000
+}
+
+.mix2 a:hover {
+    color: red;
+    text-decoration: none
+}
+
+.rows {
+    background: #fff !important
+}
+
+.J_proName {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #212121;
+    float: left;
+}
+
+#swiper2 {
+    height: 400px;
+}
+
+#swiper2 img {
+    width: 100%;
+    height: 400px;
+}
+
+.photobox {
+    padding: 30px 10px 20px 0;
+}
+
+ul li {
+    list-style: none
+}
+
+.order {
+    display: block;
+    width: 113px;
+    height: 45px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background: #00ae66;
+    color: #fff;
+    border-radius: 1px;
+    outline: none;
+    border: none;
+}
+
+.order:hover {
+    background: green;
+    transition: background 0.4s;
+    color: #fff;
+}
+
+.comment {
+    background: #fafafa
+}
+
+.main-hd {
+    display: block;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.main-hd h2 {
+    color: #394043;
+    font-size: 23px;
+    font-weight: bold;
+    display: inline;
+}
+
+.commentCon {
+    position: relative;
+}
+
+.comment_list {
+    line-height: 1;
+    padding: 10px 55px 10px 40px;
+}
+
+.comment_item {
+    padding-top: 20px;
+}
+
+.item_img {
+    display: inline-block;
+}
+
+.item_img img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.comment_right {
+    display: inline-block;
+    width: 1000px;
+    border-bottom: 1px solid #f1f1f1;
+    float: right
+}
+
+.com_content {}
+
+.com_decs {
+    color: #394043;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 13px 0;
+    display: block;
+}
+
+.content_title {
+    color: #394043;
+    font-size: 14px;
+    padding: 5px 0 5px
+}
+.content_title p{
+    display: inline-block;
+    float: right;
+    padding-right: 10px;
+}
+.comment_time {
+    color: #b0b3b4;
+    font-size: 12px;
+    margin-bottom: 19px;
+}
+.rate{
+    margin-left: 20px;
+    display: inline-block;
+}
+star {
+     font-size: 0;
+}
+
+.star-item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+    background-size: 100%;
+    
+}
+
+ .star-item.on {
+     background-image: url(/lib/images/star-on.png);
+    
+}
+
+ .star-item.half {
+     background-image: url(/lib/images/star-half.png);
+    
+}
+
+ .star-item.off {
+     background-image: url(/lib/images/star-off.png);
+    
+}
+.publish{
+    padding: 10px 20px 20px;
+}
+.publish_btn{
+    padding: 10px;
+    float: right;
+}
+.publish_btn button{
+    display: inline-block;
+    margin-right:10px; 
+}
+.publish_title h5{
+    background: #eae6e1;
+    padding: 5px;
+}
+.rate_box{
+    padding: 10px 5px ;
+    display: inline-block;
+}
+#function-demo{
+    display: inline-block;
+    padding: 10px 15px 0 0;
+}
+#function-hint{
+    display: inline-block;
+    color: lightcoral;
+}

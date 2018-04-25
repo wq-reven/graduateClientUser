@@ -12,6 +12,9 @@ html {
     font-size: 100px;
 }
 /* ********************* Header Start! *********************** */
+#navbar{
+    position: fixed
+}
 nav.navbar {
     font-size: 14px;
     min-height: 50px;

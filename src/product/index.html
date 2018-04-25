@@ -128,8 +128,8 @@
             <div class="container">
                 <div class="row" style="padding:0 10px">
                     <div class="col-lg-6">
-                        <h2 class="spread_head">优质房间，为你而选</h2>
-                        <h5>房间那么多，我们只挑最好的</h5>
+                        <h2 class="spread_head"><span style="font-weight: bold">优质房间 </span>为你而选</h2>
+                        <h5 style="color: #666">房间那么多，我们只挑最好的</h5>
                     </div>
                     <div class="col-lg-6 search" >
                        <div id='searchform'>
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-lg-12 house_box">
                         <ul class="house_list">
-                            <li v-for='(val,index) in house' class="house_list_li col-lg-3">
+                            <li v-for='(val,index) in house' class="house_list_li col-lg-3" v-on:click="jump(val.roomOrder)">
                                 <div class="listinfo item">
                                     <img v-bind:src="val.image[0]">
                                     <h3>{{val.roomOrder}}，正{{val.direction}}向</h3>

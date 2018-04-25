@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <script src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/iconfont.js"></script>
+    <link rel="stylesheet" href="/lib/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="/lib/css/jquery.raty.css">
+    <%= htmlWebpackPlugin.options.statisticsHeader %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+
+            <% } %>
+</head>
+
+<body>
+    <!-- nav start  -->
+    <%= htmlWebpackPlugin.options.header %>
+        <!-- nav end  -->
+        <!-- banner start -->
+        <div id="detailBox">
+            <div class="contents">
+                <div class="container mix2">
+                    <h2 class="J_proName">房源详情</h2>
+                    <div class="con">
+                        <div class="left">
+                            <span class="separator">|</span>
+                            <a href="">吉林民众托老所</a>
+                        </div>
+                        <div class="right">
+                            <button class="btn" id="addCell" v-on:click="addCell">加入收藏</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box1 contents1">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container">
+                            <div class="col-lg-7 photobox">
+                                <div class="swiper-container" id="swiper2">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" v-for="image in photo">
+                                            <img src="" v-bind:src="image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination" id="pagination1"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5" style="padding: 30px 0 0px 30px">
+                                <span style="font-size: 23px;font-weight: bold">房间基本信息</span>
+                                <a>干净整洁，舒适入住</a>
+                                <div class="jiedao">
+                                    <div class="row">
+                                        <ul class="col-lg-12">
+                                            <li class="col-lg-6">
+                                                <span>房间号</span>{{houseInfo.roomOrder}}
+                                            </li>
+                                            <li class="col-lg-6">
+                                                <span>所在楼层</span>{{floor}}
+                                            </li>
+                                            <li class="col-lg-6">
+                                                <span>窗户方位</span>{{houseInfo.direction}}
+                                            </li>
+                                            <li class="col-lg-6">
+                                                <span>房间面积</span>12平米</span>
+                                            </li>
+                                            <li class="col-lg-6">
+                                                <span>可入住总人数</span>{{houseInfo.totalNum}}人
+                                            </li>
+                                            <li class="col-lg-6">
+                                                <span>已入住人数</span>{{houseInfo.userNum}}人
+
+                                                <li class="col-lg-6">
+                                                    <span>空调情况</span>有
+                                                </li>
+                                                <li class="col-lg-6">
+                                                    <span>暖气情况</span>有
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="orderhandle">
+                                    <p style="font-size:16px;color:red">现在预约，更有多重好礼</p>
+
+                                </div>
+                                <div class="orderbutton">
+                                    <button class="btn order">立即预约</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment" style="padding-top:30px">
+                <div class="container">
+                    <div class="main-hd clearfix">
+                        <h2>用户评价</h2>
+                     
+                    </div>
+                    <div class="row clearfix">
+                        <div class="commentCon">
+                            <div class="comment_list" v-for="(val,index) in comments">
+                                <div class="comment_item clearfix">
+                                    <a class="item_img">
+                                        <img src="https://image1.ljcdn.com/usercenter/images/uc_ehr_avatar/5805e808-1d93-4022-8fa1-21c8514275c6.jpg.55x55.jpg" alt="">
+                                    </a>
+                                    <div class="comment_right">
+                                        <div class="com_content">
+                                            <div class="content_title">
+                                                <span v-html="stringSub(val.user.email)">
+                                                </span>
+                                                <p>
+                                                    <span v-for="(itemClass,index) in score[index]" :class="itemClass" class="star-item" track-by="index"></span>
+                                                </p>
+                                            </div>
+                                            <div class="com_decs">{{val.content}}</div>
+                                            <div class="comment_time" v-html="formatDate(val.createTime)"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publish">
+                        <div class="publish_title">
+                            <h5>发表评论</h5>
+                        </div>
+                        <div class="publish_con">
+                            <textarea v-model="comment_con" class="form-control" rows="4" placeholder="不超过140字"></textarea>
+                            <div class="rate_box">
+                                <div id="function-demo" class="target-demo"></div>
+                                <div id="function-hint" class="hint"></div>
+                            </div>
+                            <div class="publish_btn">
+                                <button class="btn  btn-warning" v-on:click="cancelPublish">取消</button>
+                                <button class="btn btn-success" v-on:click="publish">发布</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer start -->
+        <%= htmlWebpackPlugin.options.footer %>
+            <%= htmlWebpackPlugin.options.statisticsFooter %>
+                <!-- footer end -->
+                <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+                    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
+                        <% } %>
+                            <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script type="text/javascript" src="/lib/js/vue.js"></script>
+                                <script src="/lib/js/jquery.raty.js"></script>
+                                <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <script src="/lib/js/swiper-3.4.2.min.js"></script>
+                                <% } %>
+</body>
+
+</html>

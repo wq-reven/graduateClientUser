@@ -57,6 +57,9 @@ var vm = new Vue({
                 this.getHouseList(this.querys);
             }
         },
+        jump: function (roomOrder) {
+            location.href = "detail.html?id=" + roomOrder + ""
+        },
         pageClick: function () {
             console.log('现在在' + this.cur + '页');
              this.getHouseList(this.querys);
