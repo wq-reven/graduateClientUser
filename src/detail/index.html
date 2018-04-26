@@ -30,7 +30,8 @@
                             <a href="">吉林民众托老所</a>
                         </div>
                         <div class="right">
-                            <button class="btn" id="addCell" v-on:click="addCell">加入收藏</button>
+                            <button class="btn btn-success" v-if="add" v-on:click="addCell">加入收藏</button>
+                            <button class="btn" v-if="cancel" v-on:click="canCell">取消收藏</button>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
 
                                 </div>
                                 <div class="orderbutton">
-                                    <button class="btn order">立即预约</button>
+                                    <a class="btn order" href="apposervice.html">立即预约</a>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +99,6 @@
                 <div class="container">
                     <div class="main-hd clearfix">
                         <h2>用户评价</h2>
-                     
                     </div>
                     <div class="row clearfix">
                         <div class="commentCon">
@@ -124,6 +124,7 @@
                             </div>
                         </div>
                     </div>
+                    <div><button class="btn" v-on:click="showMore">展示更多</button></div>
                     <div class="publish">
                         <div class="publish_title">
                             <h5>发表评论</h5>
@@ -153,7 +154,11 @@
                             <% for (key in htmlWebpackPlugin.files.chunks) { %>
                                 <script type="text/javascript" src="/lib/js/vue.js"></script>
                                 <script src="/lib/js/jquery.raty.js"></script>
+                               
                                 <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <script>
+                                
+                                </script>
                                 <script src="/lib/js/swiper-3.4.2.min.js"></script>
                                 <% } %>
 </body>

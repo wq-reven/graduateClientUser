@@ -6,8 +6,6 @@
         <%= htmlWebpackPlugin.options.title %>
     </title>
     <script src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/iconfont.js"></script>
-    <link rel="stylesheet" href="/lib/css/swiper-3.4.2.min.css">
-    <link rel="stylesheet" href="/lib/css/jquery.raty.css">
     <%= htmlWebpackPlugin.options.statisticsHeader %>
         <% for (key in htmlWebpackPlugin.files.css) { %>
             <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
@@ -20,51 +18,94 @@
     <%= htmlWebpackPlugin.options.header %>
         <!-- nav end  -->
         <!-- banner start -->
-        <div id="person">
-            <div class="container mix2">
-                <h5 class="J_proName">个人中心</h5>
-                <div class="row">
-                    <div class="person_left col-lg-2">
-                        <div class="person_menu">
-                            <div class="person_title">
-                                <img src="https://image1.ljcdn.com/usercenter/images/uc_ehr_avatar/5805e808-1d93-4022-8fa1-21c8514275c6.jpg.55x55.jpg" alt="">
-                                <p>
-                                    <span>欢饮您，826011374@qq.com</span>
-                                </p>
+        <div id="Person">
+            <div class="havedata" v-if="havedataShow">
+                <div class="container mix2">
+                    <div class="row">
+                        <div class="person_left col-lg-2">
+                            <div class="person_menu">
+                                <div class="person_title">
+                                    <img src="https://image1.ljcdn.com/usercenter/images/uc_ehr_avatar/5805e808-1d93-4022-8fa1-21c8514275c6.jpg.55x55.jpg" alt="">
+                                    <p>
+                                        <span>欢饮您，826011374@qq.com</span>
+                                    </p>
+                                </div>
+                                <div class="person_con">
+                                    <ul>
+                                        <li class="cilckClass">
+                                            <a>我的预约</a>
+                                        </li>
+                                        <li>
+                                            <a>我的收藏</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="person_con">
-                                <ul>
-                                    <li >
-                                        <a href="">我的预约</a>
-                                    </li>
-                                    <li class="cilckClass">
-                                        <a href="">我的收藏</a>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div class="person_right col-lg-10">
+                            <div class="tab ">
+                                <div class="person_box" >
+                                    <div class="order_num">
+                                        <h4>共有{{order.length}}个预约</h4>
+                                        <span>{{readyorder}}个已完成</span>
+                                    </div>
+                                    <div class="order_con clearfix" v-for="(val, index) in order">
+                                        <div class="order_left ">
+                                            <a href="" style="display: block">
+                                                <img v-bind:src="val.avatar" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="order_center">
+                                            <h4>预约人姓名：{{val.name}}</h4>
+                                            <p class="list_desc"> 预约时间: <span v-html = "formatDate(val.appoTime)"></span></p>
+                                            <div>
+                                                <span>联系方式:</span>
+                                                <span>{{val.contactWay}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="order_right">
+                                            <h4>预约状态：<span v-html="formatView(val.status)"></span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab hide">
+                                <div class="person_box">
+                                    <div class="house_num">
+                                        <h4>共{{collectionList.length}}间关注房源</h4>
+                                    </div>
+                                    <div class="list clearfix" v-for="(val,index) in collectionList">
+                                        <div class="list_left ">
+                                            <a href="" style="display: block">
+                                                <img v-bind:src="val.image[0]" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="list_right">
+                                            <h4>房间号 {{val.roomOrder}}</h4>
+                                            <p class="list_desc"> 干净整洁，舒适入住</p>
+                                            <div>
+                                                <span>楼层：2层</span>
+                                                <span>面积：15平米</span>
+                                                <span>窗户方位：{{val.direction}}</span>
+                                                <span>已入住人数：{{val.userNum}}人</span>
+                                            </div>
+                                            <p class="list_i">正在火热预约中</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="person_right col-lg-10">
-                        <div class="person_box">
-                            <div>
-                                <h4>共0间关注房源</h4>
-                            </div>
-                            <div class="list row">
-                                <div class="list_left ">
-                                   <a href="" style="display: block">
-                                        <img src="http://localhost:8080/house/house5.jpg" alt="">
-                                   </a>
-                                </div>
-                                <div class="list_right">
-                                    <h3>房间号  3305</h3>
-                                    <p class="list_desc"> 干净整洁，舒适入住</p>
-                                    <div>
-                                        <span>楼层：2层</span><span>面积：15平米</span><span>窗户方位：2层</span><span>已入住人数：2人</span>
-                                    </div>
-                                    <p class="list_i">正在火热预约中</p>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="nodata" v-if="nodataShow">
+                <div class="container">
+                    <div class="nodata_box">
+                        <h3>找不到你的个人中心了</h3>
+                        <p>
+                            您还没有登录，去登录
+                            <a href="login.html">戳这里</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -78,9 +119,7 @@
                         <% } %>
                             <% for (key in htmlWebpackPlugin.files.chunks) { %>
                                 <script type="text/javascript" src="/lib/js/vue.js"></script>
-                                <script src="/lib/js/jquery.raty.js"></script>
                                 <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
-                                <script src="/lib/js/swiper-3.4.2.min.js"></script>
                                 <% } %>
 </body>
 

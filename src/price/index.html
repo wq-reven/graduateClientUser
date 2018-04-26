@@ -8,6 +8,7 @@
     <%= htmlWebpackPlugin.options.statisticsHeader %>
         <% for (key in htmlWebpackPlugin.files.css) { %>
             <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+            <link rel="stylesheet" href="/lib/css/appo/bootstrap-datetimepicker.min.css">
             <% } %>
 
                 <script src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/iconfont.js"></script>
@@ -48,6 +49,13 @@
                 <a class="caculator" href="javascript:void(0);">
                     价格计算器
                 </a>
+                <div id="datetimepicker1" class="input-append date">
+                    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                    <span class="add-on">
+                        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                        </i>
+                    </span>
+                </div>
             </div>
         </div>
         <span id="select_price">
@@ -224,7 +232,13 @@
                     <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
                         <% } %>
                             <% for (key in htmlWebpackPlugin.files.chunks) { %>
+                                <script src="/lib/js/appo/bootstrap-datetimepicker.min.js"></script>
                                 <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+                                <script>
+                                    $('#datetimepicker1').datetimepicker({
+                                            language: 'zh-cn'
+                                        });
+                                </script>
                                 <% } %>
 
 </body>

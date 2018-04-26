@@ -8,7 +8,7 @@ function getParam(name) {
     if (r != null) return unescape(r[2]);
     return "";
 }
-
+var roomOrder = getParam('id')
 //获取评分数组
 function itemClasses(param) {
     let result = [];
@@ -17,19 +17,14 @@ function itemClasses(param) {
     let integer = Math.floor(score);
     for (let i = 0; i < integer; i++) {
         result.push("on");
-
     }
     if (hasDecimal) {
         result.push("half");
-
     }
     while (result.length < 5) {
         result.push("off");
-
     }
-    console.log(result)
     return result;
-
 }
 var vm = new Vue({
     el: "#detailBox",
@@ -40,17 +35,26 @@ var vm = new Vue({
         comments: [],
         score: [],
         comment_con: "",
-        pageSize:2,
+        pageSize: 2,
+        add: true,
+        cancel: false
     },
     mounted: function () {
-        let roomOrder = getParam('id')
         let querys = {
             roomOrder: roomOrder
         }
         this.getHouseDetail(querys);
         this.getHouseComments(querys);
+        this.cellction();
     },
     methods: {
+        showMore:function (params) {
+            this.pageSize ++;
+            let querys = {
+                roomOrder: roomOrder
+            }
+            this.getHouseComments(querys);
+        },
         getHouseDetail: function (querys) {
             let data = {
                 querys: querys,
@@ -59,7 +63,6 @@ var vm = new Vue({
                     'current': 1,
                     'pageSize': 1
                 },
-
             }
             $.ajax({
                 type: "GET",
@@ -68,11 +71,9 @@ var vm = new Vue({
                     body: JSON.stringify(data)
                 },
                 success: function (res) {
-                    console.log(res);
                     this.houseInfo = res.data.docs[0];
                     this.photo = res.data.docs[0].image;
                     let floor = ((res.data.docs[0].roomOrder).toString())[0]
-                    console.log(floor)
                     this.floor = floor
                 }.bind(this)
             })
@@ -114,8 +115,76 @@ var vm = new Vue({
             let newString = param.substr(0, 3) + '****' + param.substr(-9);
             return newString;
         },
-        addCell:function (params) {
-            
+        addCell: function () {
+            if (sessionStorage.getItem('userInfo') != null) {
+                let userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+                if (localStorage.getItem(userInfo.uid) != null) {
+                    let userCelletion = JSON.parse(localStorage.getItem(userInfo.uid));
+                    let housedata = userCelletion.housedata;
+                    housedata.push(this.houseInfo);
+                    let info = {
+                        housedata: housedata,
+                        uid: userInfo.uid
+                    };
+                    localStorage.setItem(userInfo.uid, JSON.stringify(info));
+                    this.cancelshow();
+                } else {
+                    let housedata = [];
+                    housedata.push(this.houseInfo);
+                    let info = {
+                        housedata: housedata,
+                        uid: userInfo.uid
+                    };
+                    localStorage.setItem(userInfo.uid, JSON.stringify(info));
+                    this.cancelshow();
+                }
+            } else {
+                alert('对不起，您还没有登录')
+            }
+        },
+        canCell: function () {
+            let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+            let userCelletion = JSON.parse(localStorage.getItem(userInfo.uid));
+            let housedetail = userCelletion.housedata;
+            for (let i = 0; i < housedetail.length; i++) {
+                if (housedetail[i].roomOrder == roomOrder) {
+                    housedetail.splice(i, 1);
+                    break;
+                }
+            };
+            let info = {
+                housedata: housedetail,
+                uid: userInfo.uid
+            };
+            localStorage.setItem(userInfo.uid, JSON.stringify(info));
+            this.addshow();
+        },
+        addshow: function () {
+            this.add = true;
+            this.cancel = false
+        },
+        cancelshow: function () {
+            this.add = false;
+            this.cancel = true
+        },
+        cellction: function () {
+            if (sessionStorage.getItem('userInfo') != null) {
+                let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+                if (localStorage.getItem(userInfo.uid) != null) {
+                    let userCelletion = JSON.parse(localStorage.getItem(userInfo.uid));
+                    let housedetail = userCelletion.housedata;
+                    let cellArr = housedetail.filter(elem => {
+                        if (elem.roomOrder == roomOrder) {
+                            return elem
+                        }
+                    });
+                    cellArr.length != 0 ? this.cancelshow() : this.addshow();
+                } else {
+
+                }
+            } else {
+
+            }
         },
         cancelPublish: function () {
             this.comment_con = ""
@@ -123,11 +192,9 @@ var vm = new Vue({
         publish: function () {
             if (sessionStorage.getItem('userInfo') != null) {
                 let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-                if (userInfo.userType == '1') {
-                    alert('入住之后才能评论哦')
-                } else {
+                if (userInfo.userType == '2') {
                     if (sessionStorage.getItem('score') != null) {
-                        if (this.comment_con !="") {
+                        if (this.comment_con != "") {
                             let score = sessionStorage.getItem('score');
                             let content = this.comment_con;
                             let roomOrder = getParam('id')
@@ -147,7 +214,6 @@ var vm = new Vue({
                                 },
                                 success: function (res) {
                                     if (res.code == 0) {
-                                        console.log(res)
                                         let querys = {
                                             roomOrder: roomOrder
                                         }
@@ -162,12 +228,12 @@ var vm = new Vue({
                     } else {
                         alert('请选择评分')
                     }
+                } else {
+                    alert('入住之后才能评论哦')
                 }
-
             } else {
                 alert('对不起，您还没有登录')
             }
-
         }
     },
     computed: {

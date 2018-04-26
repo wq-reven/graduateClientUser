@@ -1,0 +1,27 @@
+
+.navbar-header {
+    min-height: 50px;
+    width: auto !important
+}
+
+#navbar {
+    position: static !important;
+    background: dimgrey
+}
+#navbar a{
+    font-weight: 100 !important;
+}
+.update{
+    width: 490px;
+    padding: 25px 0 50px;
+}
+.position{
+    position: static !important
+}
+h4{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.form-group{
+    margin-bottom: 20px;
+}
