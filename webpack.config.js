@@ -179,7 +179,7 @@ pages.forEach(function(pathname) {
         },
     };
     conf.chunks = ['common', itemName[1]];
-    conf.title = '海螺服务';
+    conf.title = '吉林民众托老所';
     conf.statisticsHeader = page_common_statisticsHeader;
     conf.statisticsFooter = page_common_statisticsFooter;
     conf.header = page_common_header;

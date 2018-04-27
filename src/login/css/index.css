@@ -8,13 +8,16 @@
 .login_logo img {
     height: 40px;
     width: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .login_logo a {
     color: #666;
     text-decoration: none;
+    padding-right: 20px 
 }
-
+.login_logo{
+    padding-left: 0
+}
 .return_home a {
     color: #666;
     text-decoration: none;
@@ -44,14 +47,13 @@
 }
 .login-logo a {
     display: block;
-    padding: 0 10px;
+    padding-right:20px;
     margin-top: 10px;
     color: #fff;
     text-decoration: none;
 }
 body,
 html {
-    background: url('//p0.ifengimg.com/fe/zl/test/live/p2p_index//login.png') no-repeat;
     background-size: auto;
     height: 100%;
     width: 100%;

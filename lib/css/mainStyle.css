@@ -32,7 +32,7 @@ nav.navbar {
     }
 }
 nav.navbar:hover {
-    background-color: #303848;
+    background-color: darkcyan;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -46,13 +46,13 @@ nav.navbar:hover {
 .navbar-default {
     background: transparent;
     color: #FFF;
-    background-color: #303848;
+    background-color: darkcyan;
     border: none;
     border-radius: 0;
     transition: opacity .6s ease, background .6s ease, box-shadow .6s ease;
 }
 nav.navbar.nav-bg {
-    background-color: #303848;
+    background-color: darkcyan;
     transition: all linear .8s;
 }
 
@@ -78,7 +78,7 @@ nav.navbar.nav-bg {
     }
     .navbar {
         position: relative;
-        background-color: #303848 !important;
+        background-color: darkcyan !important;
     }
     .navbar-nav>li>a{
         padding-top:14px;
@@ -719,24 +719,24 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 }
 .navbar-right .open .dropdown-toggle{
-    background: #303848 !important;
+    background:darkcyan !important;
     color:#fff
 }
 .navbar-right .open .dropdown-toggle:hover{
-    background: #303848 !important;
+    background:darkcyan !important;
     color:#fff;
     cursor: pointer;
 }
 .login_info{
     left: 0 !important;
-    background: #303848 !important;
+    background: darkcyan !important;
     color: #fff !important
 }
 .login_info li a{
     color: #fff !important
 }
 .login_info li a:hover{
-    background: #303848;
+    background: darkcyan;
     color: #fff !important
 }
 #dropdown-menu-ul li:first-child{

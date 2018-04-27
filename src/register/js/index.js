@@ -18,16 +18,24 @@ function register() {
             body: JSON.stringify(data)
         },
         contentType: 'application/json; charset=utf-8',
-        beforeSend: function(xhr) {
+        beforeSend: function (xhr) {
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         },
-        success: function(res) {
-             if (res.code == 0) {
+        success: function (res) {
+            if (res.code == 0) {
                 location.href = 'regisjump.html'
             } else if (res.data.dbResult == '验证码错误') {
-                 alert('验证码错误,请重新获取！')
+                layer.msg('验证码错误,请重新获取', {
+                    offset: '100px'
+                })
+            } else if (res.data.ok == 2) {
+                layer.msg('手机号已被注册,请重试！', {
+                    offset: '100px'
+                });
             } else {
-                 alert('注册失败，请重试！')
+                layer.msg('注册失败，请重试！', {
+                    offset: '100px'
+                });
             }
         },
     });
@@ -37,12 +45,12 @@ function register() {
  * 表单提交事件
  */
 $.validator.setDefaults({
-    submitHandler: function() {
+    submitHandler: function () {
         register();
     },
 });
 
-$().ready(function() {
+$().ready(function () {
     /**
      * 表单验证规则
      */
@@ -97,10 +105,16 @@ $().ready(function() {
      * 全局样式
      */
     $('#phoneNum').focus(() => {
-        $('.needPhoneNum').css({ display: 'none' });
-        $('.phoneNumError').css({ display: 'none' });
+        $('.needPhoneNum').css({
+            display: 'none'
+        });
+        $('.phoneNumError').css({
+            display: 'none'
+        });
     });
     $('.verification_confirm').click(() => {
-        $('.verification_email').css({ display: 'none' });
+        $('.verification_email').css({
+            display: 'none'
+        });
     });
 });

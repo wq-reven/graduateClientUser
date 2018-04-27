@@ -10,15 +10,18 @@ html,body{
 .login_logo img{
     height: 40px;
     width: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .login_logo a{
-    color: #fff;
+    color: #666;
     text-decoration: none;
+    padding-right: 20px;
 }
-
+.login_logo {
+    padding-left: 0
+}
 .return_home a{
-    color: #fff;
+    color: #666;
     text-decoration: none;
 }
 .return_home i{

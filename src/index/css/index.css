@@ -30,7 +30,7 @@
     float: left;
     color: #fff;
     border: 1px solid #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     margin-right: 55px;
     margin-bottom: 15px;
     line-height: 50px;
@@ -41,6 +41,7 @@
 .p_icon .player a:hover {
     color: black;
     background-color: #fff;
+    transition: background-color 0.6s;
 }
 .item{
     margin-top:70px;
@@ -54,7 +55,7 @@
 .section2 { background: url('/lib/images/index_bg1.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
 .section3 { background: url('/lib/images/index_bg4.jpg'); background-size:100% 100%;background-repeat:no-repeat;}
 .cover {
-    background-color:rgba(0,0,0,0.5);
+    background-color: darkolivegreen;
     z-index:100;
 }
 .right_border{
@@ -111,4 +112,7 @@
 }
 #section1 .deviation_down55px{
     font-size:35px !important
+}
+.section4{
+    background: darkcyan !important
 }

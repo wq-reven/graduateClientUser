@@ -15,8 +15,11 @@
     <header class="login_header">
         <div class="container">
             <div class="login_logo col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
-                <a href="index.html">
-                    <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/logo-02.png" alt="" class="login-logo-img">海螺服务
+                <a href="product.html" style="display: inline-block;">
+                    <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/logo-02.png" alt="" class="login-logo-img">预约服务
+                </a>
+                <a href="about.html">
+                    关于我们
                 </a>
             </div>
             <div class="return_home col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
@@ -115,6 +118,7 @@
     <script src="//p0.ifengimg.com/a/2017/1222/bootstrap-3.37.min.js"></script>
     <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
     <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <script src="/lib/js/layer/layer.js"></script>
     <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
         <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %>
             <% } %>
@@ -155,38 +159,43 @@
                         /**
                          * 获取验证码
                          */
-                            function sendCode(thisBtn){
-                                let phoneNum = $('#phoneNum').val();
-                                if (phoneNum !== '') {
-                                    let data = {
-                                        phone: phoneNum,
-                                        type:'register'
-                                    }
-                                    if (checkMobile(phoneNum)) {
-                                        startTime(thisBtn)
-                                        $.ajax({
-                                            type: 'get',
-                                            url: 'http://localhost:3300/user/sendSmsCode',
-                                            data: {
-                                                body: JSON.stringify(data)
-                                            },
-                                            contentType: 'application/json; charset=utf-8',
-                                            beforeSend: function (xhr) {
-                                                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-                                            },
-                                            success: function (res) {
-                                                console.log(res);
-                                                // if (res.code == 200) {
-                                                //}
-                                            },
-                                        });
-                                    } else {
-                                        $('.phoneNumError').css({ display: 'block' });
-                                    }
-                                } else {
-                                    $('.needPhoneNum').css({ display: 'block' });
+                        function sendCode(thisBtn) {
+                            let phoneNum = $('#phoneNum').val();
+                            if (phoneNum !== '') {
+                                let data = {
+                                    phone: phoneNum,
+                                    type: 'register'
                                 }
-                            };
+                                if (checkMobile(phoneNum)) {
+                                    startTime(thisBtn)
+                                    $.ajax({
+                                        type: 'get',
+                                        url: 'http://localhost:3300/user/sendSmsCode',
+                                        data: {
+                                            body: JSON.stringify(data)
+                                        },
+                                        contentType: 'application/json; charset=utf-8',
+                                        beforeSend: function (xhr) {
+                                            xhr.setRequestHeader('Content-Type',
+                                                'application/json;charset=UTF-8');
+                                        },
+                                        success: function (res) {
+                                            console.log(res);
+                                            // if (res.code == 200) {
+                                            //}
+                                        },
+                                    });
+                                } else {
+                                    $('.phoneNumError').css({
+                                        display: 'block'
+                                    });
+                                }
+                            } else {
+                                $('.needPhoneNum').css({
+                                    display: 'block'
+                                });
+                            }
+                        };
                     </script>
                     <% } %>
 </body>
