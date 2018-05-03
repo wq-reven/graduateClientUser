@@ -30,7 +30,7 @@ function submitAppo() {
             },
         });
     } else {
-        alert('您还没有登录')
+        layer.msg('登录后才可以预约哦！',{offset: '100px'});
     }
 }
 
@@ -57,7 +57,6 @@ $('#form').validate({
             required: true,
             minlength: 11,
             maxlength:11
-
         },
         roomOrder: {
             required: true,

@@ -1,15 +1,29 @@
 import '../css/index.css';
 const moment = require('moment');
 
-//获取地址栏参数
+/**
+ *
+ * @param {*} name
+ * 获取地址栏参数
+ */
+var roomOrder = getParam('id');
 function getParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]);
+    var r = window
+        .location
+        .search
+        .substr(1)
+        .match(reg);
+    if (r != null) 
+        return unescape(r[2]);
     return "";
 }
-var roomOrder = getParam('id')
-//获取评分数组
+
+/**
+ *
+ * @param {any} param
+ * @returns 获取评分数组
+ */
 function itemClasses(param) {
     let result = [];
     let score = Math.floor(param * 2) / 2;
@@ -26,7 +40,11 @@ function itemClasses(param) {
     }
     return result;
 }
-var vm = new Vue({
+
+/**
+ * vue方法
+ */
+const vm = new Vue({
     el: "#detailBox",
     data: {
         photo: [],
@@ -48,8 +66,8 @@ var vm = new Vue({
         this.cellction();
     },
     methods: {
-        showMore:function (params) {
-            this.pageSize ++;
+        showMore: function (params) {
+            this.pageSize++;
             let querys = {
                 roomOrder: roomOrder
             }
@@ -62,7 +80,7 @@ var vm = new Vue({
                 pagination: {
                     'current': 1,
                     'pageSize': 1
-                },
+                }
             }
             $.ajax({
                 type: "GET",
@@ -85,7 +103,7 @@ var vm = new Vue({
                 pagination: {
                     'current': 1,
                     'pageSize': this.pageSize
-                },
+                }
             }
             $.ajax({
                 type: "GET",
@@ -139,14 +157,14 @@ var vm = new Vue({
                     this.cancelshow();
                 }
             } else {
-                alert('对不起，您还没有登录')
+                layer.msg('对不起，您还没有登录',{offset: '100px'});
             }
         },
         canCell: function () {
             let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
             let userCelletion = JSON.parse(localStorage.getItem(userInfo.uid));
             let housedetail = userCelletion.housedata;
-            for (let i = 0; i < housedetail.length; i++) {
+            for (let i = 0, len = housedetail.length; i < len; i++) {
                 if (housedetail[i].roomOrder == roomOrder) {
                     housedetail.splice(i, 1);
                     break;
@@ -167,6 +185,22 @@ var vm = new Vue({
             this.add = false;
             this.cancel = true
         },
+        addCommentsNum: function () {
+            let data = {
+                roomOrder: roomOrder,
+                commentNum: 1
+            };
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3300/room/changeRoomCommentNum",
+                data: {
+                    body: JSON.stringify(data)
+                },
+                success: function (res) {
+                    console.log(res)
+                }.bind(this)
+            });
+        },
         cellction: function () {
             if (sessionStorage.getItem('userInfo') != null) {
                 let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
@@ -176,15 +210,13 @@ var vm = new Vue({
                     let cellArr = housedetail.filter(elem => {
                         if (elem.roomOrder == roomOrder) {
                             return elem
-                        }
+                        };
                     });
-                    cellArr.length != 0 ? this.cancelshow() : this.addshow();
-                } else {
-
-                }
-            } else {
-
-            }
+                    cellArr.length != 0
+                        ? this.cancelshow()
+                        : this.addshow();
+                } else {}
+            } else {}
         },
         cancelPublish: function () {
             this.comment_con = ""
@@ -204,8 +236,8 @@ var vm = new Vue({
                                 name: userInfo.name,
                                 roomOrder: roomOrder,
                                 content: content,
-                                rate: score,
-                            }
+                                rate: score
+                            };
                             $.ajax({
                                 type: "GET",
                                 url: "http://localhost:3300/user/addComments",
@@ -218,27 +250,26 @@ var vm = new Vue({
                                             roomOrder: roomOrder
                                         }
                                         this.getHouseComments(querys);
+                                        this.addCommentsNum()
                                     }
                                     this.comment_con = ""
                                 }.bind(this)
                             })
                         } else {
-                            alert('您还没有填写内容')
+                            layer.msg('您还没有填写内容', {offset: '100px'});
                         }
                     } else {
-                        alert('请选择评分')
+                        layer.msg('请选择评分', {offset: '100px'});
                     }
                 } else {
-                    alert('入住之后才能评论哦')
+                    layer.msg('入住之后才能评论哦', {offset: '100px'});
                 }
             } else {
-                alert('对不起，您还没有登录')
+                layer.msg('对不起，您还没有登录', {offset: '100px'});
             }
         }
     },
-    computed: {
-
-    },
+    computed: {},
     updated: function () {
         var swiper2 = new Swiper('#swiper2', {
             direction: 'horizontal',
@@ -247,13 +278,15 @@ var vm = new Vue({
             pagination: '#pagination1',
             speed: 700,
             autoplay: 3200,
-            autoplayDisableOnInteraction: false,
+            autoplayDisableOnInteraction: false
         });
         $.fn.raty.defaults.path = '/lib/images';
         $('#function-demo').raty({
             number: 5, //多少个星星设置
             path: '/lib/images',
-            hints: ['差', '一般', '好', '非常好', '全五星'],
+            hints: [
+                '差', '一般', '好', '非常好', '全五星'
+            ],
             cancelOff: 'cancel-off.png',
             cancelOn: 'cancel-on.png',
             size: 24,

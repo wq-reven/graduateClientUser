@@ -27,13 +27,14 @@
         </div>
     </header>
     <div class="register_body">
-       <div class="container">
-         <div class="jump_body">
+        <div class="container">
+            <div class="jump_body">
                 <p>您已注册成功！</p>
-                <p><span id="tips">4</span>秒之后跳转到
-                <a href="login.html">登录 </a>页面</p>
-         </div>
-       </div>
+                <p>
+                    <span id="tips">4</span>秒之后跳转到
+                    <a href="login.html">登录 </a>页面</p>
+            </div>
+        </div>
     </div>
 
     <script src="//p0.ifengimg.com/a/2017/1222/jquery-3.2.1.min.js"></script>
@@ -49,18 +50,18 @@
                         <% for (key in htmlWebpackPlugin.files.chunks) { %>
                             <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
                             <script>
-                             window.onload = function () {
-                                        setInterval(go, 1000);
-                                    };
-                                    var x = 4; //利用了全局变量来执行 
+                                window.onload = function () {
+                                    setInterval(go, 1000);
+                                };
+                                var x = 4; //利用了全局变量来执行 
                                 function go() {
-                                        x--;
-                                        if (x > 0) {
-                                            document.getElementById("tips").innerHTML = x; //每次设置的x的值都不一样了。 
-                                        } else {
-                                            location.href = 'login.html';
-                                        }
-                                    } 
+                                    x--;
+                                    if (x > 0) {
+                                        document.getElementById("tips").innerHTML = x; //每次设置的x的值都不一样了。 
+                                    } else {
+                                        location.href = 'login.html';
+                                    }
+                                }
                             </script>
                             <% } %>
 </body>

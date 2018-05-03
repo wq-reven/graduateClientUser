@@ -1,7 +1,9 @@
 import '../css/index.css';
 const md5 = require('md5')
 
-//登录
+/**
+ * 登录方法
+ */
 $(function () {
     $('#login_mobile').click(function () {
         let data = {
@@ -54,7 +56,7 @@ $(function () {
                     // setCookie('hlplayer', JSON.stringify(res.data), 1);
                     // location.assign('index.html');
                 } else {
-                    alert('用户名或密码错误')
+                    layer.msg('用户名或密码错误！',{offset: '100px'});
                 }
                 // if (res.code === 420) {
                 //     $('#code_error').show();
@@ -86,6 +88,14 @@ $(function () {
     $('#img_code').focus(function () {
         $('#code_error').hide();
     })
+
+    /**
+     * 
+     * 设置cookie
+     * @param {any} cname 
+     * @param {any} cvalue 
+     * @param {any} exdays 
+     */
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

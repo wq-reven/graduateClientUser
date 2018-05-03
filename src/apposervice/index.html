@@ -90,64 +90,10 @@
                         <% } %>
                             <% for (key in htmlWebpackPlugin.files.chunks) { %>
                                 <script type="text/javascript" src="/lib/js/vue.js"></script>
-                                <!-- <script src="/lib/js/appo/jquery.validate.min.js"></script>
-                                <script src="/lib/js/appo/messages_zh.min.js"></script> -->
                                 <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
                                 <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+                                <script src="/lib/js/layer/layer.js"></script>
                                 <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
-                                <!-- <script>
-                                    $(document).ready(function () {
-                                        $("#wizard").steps();
-                                        $("#form").steps({
-                                            bodyTag: "fieldset",
-                                            onStepChanging: function (event, currentIndex, newIndex) {
-                                                if (currentIndex > newIndex) {
-                                                    return true
-                                                }
-                                                if (newIndex === 3 && Number($("#age").val()) < 18) {
-                                                    return false
-                                                }
-                                                var form = $(this);
-                                                if (currentIndex < newIndex) {
-                                                    $(".body:eq(" + newIndex + ") label.error",
-                                                        form).remove();
-                                                    $(".body:eq(" + newIndex + ") .error", form).removeClass(
-                                                        "error")
-                                                }
-                                                form.validate().settings.ignore =
-                                                    ":disabled,:hidden";
-                                                return form.valid()
-                                            },
-                                            onStepChanged: function (event, currentIndex, priorIndex) {
-                                                if (currentIndex === 2 && Number($("#age").val()) >=
-                                                    18) {
-                                                    $(this).steps("next")
-                                                }
-                                                if (currentIndex === 2 && priorIndex === 3) {
-                                                    $(this).steps("previous")
-                                                }
-                                            },
-                                            onFinishing: function (event, currentIndex) {
-                                                var form = $(this);
-                                                form.validate().settings.ignore = ":disabled";
-                                                return form.valid()
-                                            },
-                                            onFinished: function (event, currentIndex) {
-                                                var form = $(this);
-                                                form.submit()
-                                            }
-                                        }).validate({
-                                            errorPlacement: function (error, element) {
-                                                element.before(error)
-                                            },
-                                            rules: {
-                                                confirm: {
-                                                    equalTo: "#password"
-                                                }
-                                            }
-                                        })
-                                    });
-                                </script> -->
                                 <script src="/lib/js/laydate/laydate.js"></script>
                                 <script>
                                     laydate.render({

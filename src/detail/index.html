@@ -66,7 +66,7 @@
                                                 <span>窗户方位</span>{{houseInfo.direction}}
                                             </li>
                                             <li class="col-lg-6">
-                                                <span>房间面积</span>12平米</span>
+                                                <span>房间面积</span>{{houseInfo.area}}平米</span>
                                             </li>
                                             <li class="col-lg-6">
                                                 <span>可入住总人数</span>{{houseInfo.totalNum}}人
@@ -98,14 +98,14 @@
             <div class="comment" style="padding-top:30px">
                 <div class="container">
                     <div class="main-hd clearfix">
-                        <h2>用户评价</h2>
+                        <h2>用户评价</h2><span class="commentnum">({{comments.length}})</span>
                     </div>
                     <div class="row clearfix">
                         <div class="commentCon">
                             <div class="comment_list" v-for="(val,index) in comments">
                                 <div class="comment_item clearfix">
                                     <a class="item_img">
-                                        <img src="https://image1.ljcdn.com/usercenter/images/uc_ehr_avatar/5805e808-1d93-4022-8fa1-21c8514275c6.jpg.55x55.jpg" alt="">
+                                        <img src="http://localhost:8080/user/default.jpg" alt="">
                                     </a>
                                     <div class="comment_right">
                                         <div class="com_content">
@@ -154,11 +154,8 @@
                             <% for (key in htmlWebpackPlugin.files.chunks) { %>
                                 <script type="text/javascript" src="/lib/js/vue.js"></script>
                                 <script src="/lib/js/jquery.raty.js"></script>
-                               
+                                <script src="/lib/js/layer/layer.js"></script>
                                 <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
-                                <script>
-                                
-                                </script>
                                 <script src="/lib/js/swiper-3.4.2.min.js"></script>
                                 <% } %>
 </body>
