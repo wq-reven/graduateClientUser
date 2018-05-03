@@ -8,7 +8,7 @@ var vm = new Vue({
         cur: 1,//当前页码
         searchValue:"",
         querys: { 'status': '0'},
-        searchType:'direction'
+        searchType: 'direction'
     },
     watch: {
         cur: function (oldValue, newValue) {
@@ -33,8 +33,7 @@ var vm = new Vue({
                     body:JSON.stringify(data)
                 },
                 success: function (res) {
-                    console.log(res);
-                    if (res.code === 0) {
+                    if (res.code == 0) {
                         this.house = res.data.docs;
                         var allpage = res.data.pagination.total
                         if (allpage > 8){
@@ -43,9 +42,9 @@ var vm = new Vue({
                                 All++
                             }
                             this.all = All;
-                            this.cur = res.data.pagination.current
+                            this.cur = res.data.pagination.current;
                         } else{
-                            this.all=1
+                            this.all=1;
                         }
                     }
                 }.bind(this)
@@ -53,8 +52,7 @@ var vm = new Vue({
         },
         btnClick: function (data) {
             if (data != this.cur) {
-                this.cur = data
-                this.getHouseList(this.querys);
+                this.cur = data;
             }
         },
         jump: function (roomOrder) {
@@ -62,7 +60,7 @@ var vm = new Vue({
         },
         pageClick: function () {
             console.log('现在在' + this.cur + '页');
-             this.getHouseList(this.querys);
+            this.getHouseList(this.querys);
         },
         searchList: function () {
             if (this.searchValue !== '') {
