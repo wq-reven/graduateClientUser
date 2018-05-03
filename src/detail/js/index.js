@@ -51,6 +51,7 @@ const vm = new Vue({
         houseInfo: {},
         floor: '',
         comments: [],
+        commentNum:0,
         score: [],
         comment_con: "",
         pageSize: 2,
@@ -120,6 +121,7 @@ const vm = new Vue({
                             let element = array[i].rate;
                             score.push(itemClasses(element))
                         }
+                        this.commentNum = res.data.pagination.total;
                         this.score = score;
                         sessionStorage.removeItem('score');
                     }
