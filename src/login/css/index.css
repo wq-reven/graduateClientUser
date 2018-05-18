@@ -243,3 +243,30 @@ label.error {
     right: 0px;
     top: 37px;
 }
+.code_title{
+    text-align: center;
+    border-bottom: 1px solid #eeeeee 
+}
+#code{
+    width: 175px;
+    height: 175px;
+    margin: 10px
+}
+.scanCode{
+    padding: 20px 45px
+}
+.scanCode p {
+    text-align: center;
+    padding-top: 10px
+}
+.codeCover{
+    border: 1px solid #eeeeee
+}
+.changeWay{
+    text-align: center;
+    padding-top: 20px
+}
+.changeWay a {
+    display: block;
+    cursor: pointer;
+}

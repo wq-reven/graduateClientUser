@@ -21,7 +21,7 @@ $(function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             },
-            success: function (res) { 
+            success: function (res) {
                 if (res.data.dbResult === '验证码错误') {
                     $('#phoneCode_error').show();
                 } else if (res.data.dbResult !== '登录失败') {
@@ -56,7 +56,9 @@ $(function () {
                     // setCookie('hlplayer', JSON.stringify(res.data), 1);
                     // location.assign('index.html');
                 } else {
-                    layer.msg('用户名或密码错误！',{offset: '100px'});
+                    layer.msg('用户名或密码错误！', {
+                        offset: '100px'
+                    });
                 }
                 // if (res.code === 420) {
                 //     $('#code_error').show();
@@ -78,13 +80,25 @@ $(function () {
     });
     $('#phoneLogin').click(function () {
         $('.login_mail').hide();
+        $('.login_code').hide();
         $('.login_mobile').show();
     });
-
+    $('#scanCode_login').click(function () {
+        $('.login_mail').hide();
+        $('.login_mobile').hide();
+        $('.login_code').show();
+    });
     $('#mailLogin').click(function () {
         $('.login_mobile').hide();
+        $('.login_code').hide();
         $('.login_mail').show();
     });
+    $('#accout_login').click(function () {
+        $('.login_mobile').hide();
+        $('.login_code').hide();
+        $('.login_mail').show();
+    });
+    
     $('#img_code').focus(function () {
         $('#code_error').hide();
     })
@@ -104,4 +118,3 @@ $(function () {
         document.cookie = cname + "=" + cvalue + ";" + expires + '; path=/; domain=' + domain;
     }
 });
-

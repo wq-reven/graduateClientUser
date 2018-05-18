@@ -42,12 +42,24 @@
             <div class="container">
                 <div class="col-lg-6  col-sm-12 col-md-6 login-content-left">
                     <div class="login-left-main">
-
                     </div>
-
                 </div>
                 <div class="col-lg-6 col-sm-12 col-md-6 login-content-right">
                     <div class="login-right-main">
+                        <div class="content-cen login_code" style="display:block">
+                            <div class="code_title">
+                               <h4 style="font-weight: bold;">扫码登录</h4>
+                            </div>
+                            <div class="scanCode">
+                                <div class="codeCover">
+                                    <div id="code"> </div>
+                                </div>
+                                <p>打开<span style="color: red">民众托老所</span>小程序扫一扫</p>
+                                <div class="changeWay">
+                                    <a id="accout_login">账户登录<i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="content-cen login_mobile" style="display:none">
                             <div class="content_title">
                                 <span>手机验证码登录</span>
@@ -80,8 +92,7 @@
                                 </div>
                             </form>
                         </div>
-
-                        <div class="content-cen login_mail">
+                        <div class="content-cen login_mail" style="display:none">
                             <div class="content_title">
                                 <span>邮箱账号登录</span>
                                 <a class="change_login" id="phoneLogin">
@@ -118,6 +129,10 @@
                                     </p>
                                 </div>
                             </form>
+                            <div class="changeWay">
+                                <a id="scanCode_login">扫一扫登录<i class="fa fa-arrow-right"></i></a>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -130,6 +145,7 @@
     <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
     <script src="//static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
     <script src="/lib/js/layer/layer.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
     <script>
         function addFixed(params) {
             var t, n, i, o;
@@ -303,6 +319,38 @@
             })
         });
 
+        $.ajax({
+            type: "get",
+            url: "http://123.207.164.37:3300/wechat/getScanCode",
+            success: function (res) {
+                if (res.code == 0) {
+                    //显示到网页上  免费在线二维码生成的API
+                   $('#code').qrcode({
+                        width: 170,
+                        height: 170,
+                        text: res.data
+                    })
+                    //轮询 查询该qruuid的状态 直到登录成功或者过期(过期这里没判断，留给大家)
+                    var interval1 = setInterval(function () {
+                        $.ajax({
+                            type: "GET",
+                            url: "http://123.207.164.37:3300/wechat/getUserInfo",
+                            success: function (result) {
+                                console.log(result)
+                                if (result.code == 0) {
+                                    layer.msg('扫码成功！', { offset: '100px' });
+                                    //停止轮询
+                                    clearInterval(interval1);
+                                    sessionStorage.setItem('userInfo', JSON.stringify(result.data));
+                                    location.assign('index.html');
+                                    //TODO 拿到需要的信息 然后跳转什么的
+                                }
+                            }
+                        });
+                    }, 1000);//1秒钟  频率按需求
+                }
+            }
+        });
     </script>
     <!-- footer end -->
     <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
