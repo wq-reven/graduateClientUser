@@ -13,7 +13,7 @@ $(function () {
         }
         $.ajax({
             type: 'get',
-            url: 'http://localhost:3300/user/usersLogin',
+            url: 'http://123.207.164.37:3300/user/usersLogin',
             data: {
                 body: JSON.stringify(data)
             },
@@ -41,7 +41,7 @@ $(function () {
         }
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:3300/user/usersLogin',
+            url: 'http://123.207.164.37:3300/user/usersLogin',
             data: {
                 body: JSON.stringify(data)
             },

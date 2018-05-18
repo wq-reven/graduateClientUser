@@ -85,7 +85,7 @@ const vm = new Vue({
             }
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3300/room/queryRoomInfo",
+                url: "http://123.207.164.37:3300/room/queryRoomInfo",
                 data: {
                     body: JSON.stringify(data)
                 },
@@ -108,7 +108,7 @@ const vm = new Vue({
             }
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3300/user/queryComments",
+                url: "http://123.207.164.37:3300/user/queryComments",
                 data: {
                     body: JSON.stringify(data)
                 },
@@ -194,7 +194,7 @@ const vm = new Vue({
             };
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3300/room/changeRoomCommentNum",
+                url: "http://123.207.164.37:3300/room/changeRoomCommentNum",
                 data: {
                     body: JSON.stringify(data)
                 },
@@ -242,7 +242,7 @@ const vm = new Vue({
                             };
                             $.ajax({
                                 type: "GET",
-                                url: "http://localhost:3300/user/addComments",
+                                url: "http://123.207.164.37:3300/user/addComments",
                                 data: {
                                     body: JSON.stringify(data)
                                 },

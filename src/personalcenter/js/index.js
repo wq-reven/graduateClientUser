@@ -37,7 +37,7 @@ var vm = new Vue({
             }
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3300/appo/queryAppoInfo",
+                url: "http://123.207.164.37:3300/appo/queryAppoInfo",
                 data: {
                     body: JSON.stringify(data)
                 },

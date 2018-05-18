@@ -16,7 +16,7 @@ function submitAppo() {
         console.log(data)
         $.ajax({
             type: 'get',
-            url: 'http://localhost:3300/appo/addAppo',
+            url: 'http://123.207.164.37:3300/appo/addAppo',
             data: {
                 body: JSON.stringify(data)
             },

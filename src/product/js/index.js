@@ -28,7 +28,7 @@ var vm = new Vue({
             }
             $.ajax({
                 type:"GET",
-                url: "http://localhost:3300/room/queryRoomInfo",
+                url: "http://123.207.164.37:3300/room/queryRoomInfo",
                 data:{
                     body:JSON.stringify(data)
                 },
@@ -53,6 +53,7 @@ var vm = new Vue({
         btnClick: function (data) {
             if (data != this.cur) {
                 this.cur = data;
+                this.getHouseList(this.querys);
             }
         },
         jump: function (roomOrder) {

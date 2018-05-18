@@ -1,7 +1,7 @@
 {
     "name": "p2p_index",
     "version": "1.0.0",
-    "description": "项目布局采用bootstrap-3.37\b响应式布局，适应pc端和移动端",
+    "description": "毕设用户端",
     "main": "index.js",
     "scripts": {
         "uploadcdn": "node uploadcdn.js",
