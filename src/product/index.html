@@ -55,10 +55,10 @@
                     </div>
                     <div class="col-lg-6 search" >
                        <div id='searchform'>
-                           <!-- <span class="sstate">方位</span> -->
                            <select name="" id="" class="sstate" v-model="searchType">
-                               <option value="direction" selected>方位</option>
+                                <option value="direction" selected>方位</option>
                                 <option value="roomOrder">房间号</option>
+                                <option value="price">价格</option>
                            </select>
                            <input type="text" id="searchInput" placeholder="输入关键字进行搜索" v-model="searchValue">
                            <button id="submitButton" v-on:click="searchList" ><i class="fa fa-search fa-2x"></i></button>
@@ -71,7 +71,7 @@
                             <li v-for="(val,index) in house" class="house_list_li col-lg-3" v-on:click="jump(val.roomOrder)">
                                 <div class="listinfo item">
                                     <img v-bind:src="val.image[0]">
-                                    <h3>{{val.roomOrder}}，正{{val.direction}}向</h3>
+                                    <h3>{{val.roomOrder}}，正{{val.direction}}向，<span>{{val.price}}元/天</span></h3>
                                     <p>干净整洁，南北通透</p>
                                     <span>正在火热预约中</span>
                                 </div>

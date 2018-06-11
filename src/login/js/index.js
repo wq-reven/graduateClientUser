@@ -1,4 +1,7 @@
 import '../css/index.css';
+import {
+    clearInterval
+} from 'timers';
 const md5 = require('md5')
 
 /**
@@ -27,8 +30,6 @@ $(function () {
                 } else if (res.data.dbResult !== '登录失败') {
                     sessionStorage.setItem('userInfo', JSON.stringify(res.data.dbResult));
                     location.assign('index.html');
-                    // setCookie('hlplayer', JSON.stringify(res.data), 1);
-                    // location.assign('index.html');
                 }
             },
         });
@@ -60,15 +61,53 @@ $(function () {
                         offset: '100px'
                     });
                 }
-                // if (res.code === 420) {
-                //     $('#code_error').show();
-                // } else if (res.code === 200) {
-                //     setCookie('hlplayer', JSON.stringify(res.data), 1);
-                //     location.assign('index.html');
-                // }
             },
         });
     });
+
+    /**
+     * 轮询请求
+     */
+    function interval() {
+        let interval1 = setInterval(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://123.207.164.37:3300/wechat/getUserInfo",
+                success: function (result) {
+                    console.log(result)
+                    if (result.code == 0) {
+                        layer.msg('扫码成功！', {
+                            offset: '100px'
+                        });
+                        //停止轮询
+                        // clearInterval(interval1);
+                        sessionStorage.setItem('userInfo', JSON.stringify(result.data));
+                        location.assign('index.html');
+                    }
+                }
+            });
+        }, 1500) //每隔一秒钟请求一次后
+    }
+
+    function getCode() {
+        $.ajax({
+            type: "get",
+            url: "http://123.207.164.37:3300/wechat/getScanCode",
+            success: function (res) {
+                if (res.code == 0) {
+                    //显示到网页上  免费在线二维码生成的API
+                    $('#code').html('');
+                    $('#code').qrcode({
+                        width: 170,
+                        height: 170,
+                        text: res.data
+                    })
+                    //轮询 查询该qruuid的状态 直到登录成功或者过期(过期这里没判断，留给大家)
+                  interval();
+                }
+            }
+        });
+    }
     $('#email').blur(function () {
         changeIdenfityCode();
     });
@@ -87,6 +126,7 @@ $(function () {
         $('.login_mail').hide();
         $('.login_mobile').hide();
         $('.login_code').show();
+        getCode()
     });
     $('#mailLogin').click(function () {
         $('.login_mobile').hide();
@@ -97,8 +137,9 @@ $(function () {
         $('.login_mobile').hide();
         $('.login_code').hide();
         $('.login_mail').show();
+        
     });
-    
+
     $('#img_code').focus(function () {
         $('#code_error').hide();
     })

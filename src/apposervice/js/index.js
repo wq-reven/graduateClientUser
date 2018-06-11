@@ -13,7 +13,6 @@ function submitAppo() {
             uid: userInfo.uid,
             avatar: userInfo.avatar
         };
-        console.log(data)
         $.ajax({
             type: 'get',
             url: 'http://123.207.164.37:3300/appo/addAppo',
@@ -25,8 +24,7 @@ function submitAppo() {
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             },
             success: function (res) {
-                console.log(res)
-                location.href = "personalcenter.html"
+                location.href = "personalcenter.html";
             },
         });
     } else {

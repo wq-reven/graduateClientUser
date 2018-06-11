@@ -65,13 +65,22 @@ var vm = new Vue({
         },
         searchList: function () {
             if (this.searchValue !== '') {
-                let querys = {}
-                this.searchType == 'direction' ? querys = {
-                    direction: this.searchValue,
-                    status: '0'
-                } : querys = {
+                let querys = {};
+                if (this.searchType == 'direction') {
+                    querys = {
+                        direction: this.searchValue,
+                        status: '0'
+                    }
+                } else if (this.searchType == 'roomOrder') {
+                    querys = {
                     roomOrder: this.searchValue,
                     status: '0'
+                    }
+                } else {
+                    querys = {
+                        price: this.searchValue,
+                        status: '0'
+                    }
                 }
                 this.getHouseList(querys);
             } else {

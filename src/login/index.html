@@ -24,7 +24,7 @@
         <div class="container">
             <div class="login_logo col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <a href="product.html" style="display: inline-block;">
-                    <img src="//p0.ifengimg.com/fe/zl/test/live/p2p_index/logo-02.png" alt="" class="login-logo-img">预约服务
+                    <img src="//123.207.164.37:3300/img/manager/title1.png" alt="" class="login-logo-img">预约服务
                 </a>
                 <a href="about.html">
                    关于我们
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 col-md-6 login-content-right">
                     <div class="login-right-main">
-                        <div class="content-cen login_code" style="display:block">
+                        <div class="content-cen login_code" style="display:none">
                             <div class="code_title">
                                <h4 style="font-weight: bold;">扫码登录</h4>
                             </div>
@@ -92,7 +92,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="content-cen login_mail" style="display:none">
+                        <div class="content-cen login_mail" style="display:block">
                             <div class="content_title">
                                 <span>邮箱账号登录</span>
                                 <a class="change_login" id="phoneLogin">
@@ -130,7 +130,7 @@
                                 </div>
                             </form>
                             <div class="changeWay">
-                                <a id="scanCode_login">扫一扫登录<i class="fa fa-arrow-right"></i></a>
+                                <a id="scanCode_login">扫一扫登录，更安全<i class="fa fa-arrow-right"></i></a>
                             </div>
                            
                         </div>
@@ -319,38 +319,7 @@
             })
         });
 
-        $.ajax({
-            type: "get",
-            url: "http://123.207.164.37:3300/wechat/getScanCode",
-            success: function (res) {
-                if (res.code == 0) {
-                    //显示到网页上  免费在线二维码生成的API
-                   $('#code').qrcode({
-                        width: 170,
-                        height: 170,
-                        text: res.data
-                    })
-                    //轮询 查询该qruuid的状态 直到登录成功或者过期(过期这里没判断，留给大家)
-                    var interval1 = setInterval(function () {
-                        $.ajax({
-                            type: "GET",
-                            url: "http://123.207.164.37:3300/wechat/getUserInfo",
-                            success: function (result) {
-                                console.log(result)
-                                if (result.code == 0) {
-                                    layer.msg('扫码成功！', { offset: '100px' });
-                                    //停止轮询
-                                    clearInterval(interval1);
-                                    sessionStorage.setItem('userInfo', JSON.stringify(result.data));
-                                    location.assign('index.html');
-                                    //TODO 拿到需要的信息 然后跳转什么的
-                                }
-                            }
-                        });
-                    }, 1000);//1秒钟  频率按需求
-                }
-            }
-        });
+        
     </script>
     <!-- footer end -->
     <% if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>

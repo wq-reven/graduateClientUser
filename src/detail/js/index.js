@@ -223,6 +223,21 @@ const vm = new Vue({
         cancelPublish: function () {
             this.comment_con = ""
         },
+        typeView:function (type) {
+            switch (type) {
+                case '01':
+                    return '自理能力强'
+                    break;
+            
+                case '02':
+                    return '自理能力弱'
+                    break;
+                case '03':
+                    return '无自理能力'
+                    break;
+
+            }
+        },
         publish: function () {
             if (sessionStorage.getItem('userInfo') != null) {
                 let userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
